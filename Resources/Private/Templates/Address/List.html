@@ -1,82 +1,69 @@
-{namespace urs=TYPO3\Lvaddress\ViewHelpers}
+
 <f:layout name="Default" />
 
 This Template is responsible for creating a table of domain objects.
 
 If you modify this template, do not forget to change the overwrite settings
 in /Configuration/ExtensionBuilder/settings.yaml:
-Resources:
-Private:
-Templates:
-List.html: keep
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
 
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
 <f:section name="main">
+<h1>Listing for Address</h1>
 
-    <f:flashMessages renderMode="div" />
+<f:flashMessages />
 
-    <f:widget.paginate objects="{addresses}" as="page" configuration="{itemsPerPage: 100, insertAbove: 1, insertBelow: 0, maximumNumberOfLinks: 20}">
-        <ul class="addresses box clearfix">
-            <f:for each="{page}" as="address">
-                <li class="address clearfix">
-                    <div class="img">
-                        <f:if condition="{address.image.originalResource.originalFile.uid}">
-                            <f:then>
-                                <f:image src="{address.image.originalResource.originalFile.uid}" width="228" height="228" alt=" {address.image.originalResource.name}" />
-                            </f:then>
-                            <f:else>
-                                <f:image src="typo3conf/ext/lv_address/Resources/Public/Img/no_image.jpg" width="228" height="228" alt="no image" />
-                            </f:else>
-                        </f:if>
-                    </div>
-                    <div class="adr clearfix">
-                        <f:if condition="{address.company}">
-                            <f:then>
-                                <h2 class="data company">{address.company}</h2>
-                                <div class="data company name">{address.firstname} {address.lastname}</div>                    
-                            </f:then>
-                            <f:else>
-                                <h2 class="name">{address.firstname} {address.lastname}</h2>
-                            </f:else>
-                        </f:if>
-                        <div class="title">{address.title}</div>
-                        <f:if condition="{address.description}">
-                            <div class="data description">
-                                {address.description}
-                            </div>
-                        </f:if>
-                        <div class="data function">{address.function}</div>
-                        <div class="data street">{address.street}</div>
-                        <div class="data city">{address.zip} {address.city}</div>
-                        <div class="data state">{address.state}</div>
-                        <f:if condition="{address.phone}">
-                            <div class="data phone clearfix">
-                                <span class="label"><f:translate key="tx_lvaddress_domain_model_address.phone" /></span>
-                                <span class="data">{address.phone}</span>
-                            </div>
-                        </f:if>
-                        <f:if condition="{address.fax}">
-                            <div class="data fax clearfix">
-                                <span class="label"><f:translate key="tx_lvaddress_domain_model_address.fax" /></span>
-                                <span class="data">{address.fax}</span>
-                            </div>
-                        </f:if>
-                        <f:if condition="{address.mobile}">
-                            <div class="data mobile clearfix">
-                                <span class="label"><f:translate key="tx_lvaddress_domain_model_address.mobile" /></span>
-                                <span class="data">{address.mobile}</span>
-                            </div>
-                        </f:if>
-                        <div class="data email"><a href="mailto:{address.email}">{address.email}</a></div>
-                        <div class="data www"><urs:getDomain link="{address.www}" /></div>
-                    </div>
-                </li>
-            </f:for>
-        </ul>
-    </f:widget.paginate>
+<table  class="tx_lvaddress" >
+	<tr>
+		<th><f:translate key="tx_lvaddress_domain_model_address.lastname" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.firstname" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.image" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.title" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.function" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.phone" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.fax" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.mobile" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.email" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.www" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.company" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.street" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.zip" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.city" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.state" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.description" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.country" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
 
+	<f:for each="{addresses}" as="address">
+		<tr>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.lastname}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.firstname}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.image.originalResource.name}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.function}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.phone}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.fax}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.mobile}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.email}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.www}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.company}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.street}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.zip}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.city}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.state}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.description}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.country}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{address : address}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{address : address}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
 
-
-
+<f:link.action action="new">New Address</f:link.action>
 </f:section>

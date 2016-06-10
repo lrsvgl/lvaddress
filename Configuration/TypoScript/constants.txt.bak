@@ -1,5 +1,5 @@
 
-plugin.tx_lvaddress_addresslist {
+plugin.tx_lvaddress_address {
 	view {
 		# cat=plugin.tx_lvaddress/file; type=string; label=Path to template root (FE)
 		templateRootPath = EXT:lvaddress/Resources/Private/Templates/

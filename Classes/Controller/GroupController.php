@@ -5,7 +5,7 @@ namespace TYPO3\Lvaddress\Controller;
  *
  *  Copyright notice
  *
- *  (c) 2014
+ *  (c) 2016
  *
  *  All rights reserved
  *
@@ -29,84 +29,90 @@ namespace TYPO3\Lvaddress\Controller;
 /**
  * GroupController
  */
-class GroupController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class GroupController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+{
 
-	/**
-	 * action list
-	 *
-	 * @return void
-	 */
-	public function listAction() {
-		$groups = $this->groupRepository->findAll();
-		$this->view->assign('groups', $groups);
-	}
-
-	/**
-	 * action show
-	 *
-	 * @param \TYPO3\Lvaddress\Domain\Model\Group $group
-	 * @return void
-	 */
-	public function showAction(\TYPO3\Lvaddress\Domain\Model\Group $group) {
-		$this->view->assign('group', $group);
-	}
-
-	/**
-	 * action new
-	 *
-	 * @param \TYPO3\Lvaddress\Domain\Model\Group $newGroup
-	 * @ignorevalidation $newGroup
-	 * @return void
-	 */
-	public function newAction(\TYPO3\Lvaddress\Domain\Model\Group $newGroup = NULL) {
-		$this->view->assign('newGroup', $newGroup);
-	}
-
-	/**
-	 * action create
-	 *
-	 * @param \TYPO3\Lvaddress\Domain\Model\Group $newGroup
-	 * @return void
-	 */
-	public function createAction(\TYPO3\Lvaddress\Domain\Model\Group $newGroup) {
-		$this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-		$this->groupRepository->add($newGroup);
-		$this->redirect('list');
-	}
-
-	/**
-	 * action edit
-	 *
-	 * @param \TYPO3\Lvaddress\Domain\Model\Group $group
-	 * @ignorevalidation $group
-	 * @return void
-	 */
-	public function editAction(\TYPO3\Lvaddress\Domain\Model\Group $group) {
-		$this->view->assign('group', $group);
-	}
-
-	/**
-	 * action update
-	 *
-	 * @param \TYPO3\Lvaddress\Domain\Model\Group $group
-	 * @return void
-	 */
-	public function updateAction(\TYPO3\Lvaddress\Domain\Model\Group $group) {
-		$this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-		$this->groupRepository->update($group);
-		$this->redirect('list');
-	}
-
-	/**
-	 * action delete
-	 *
-	 * @param \TYPO3\Lvaddress\Domain\Model\Group $group
-	 * @return void
-	 */
-	public function deleteAction(\TYPO3\Lvaddress\Domain\Model\Group $group) {
-		$this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-		$this->groupRepository->remove($group);
-		$this->redirect('list');
-	}
+    /**
+     * action list
+     *
+     * @return void
+     */
+    public function listAction()
+    {
+        $groups = $this->groupRepository->findAll();
+        $this->view->assign('groups', $groups);
+    }
+    
+    /**
+     * action show
+     *
+     * @param \TYPO3\Lvaddress\Domain\Model\Group $group
+     * @return void
+     */
+    public function showAction(\TYPO3\Lvaddress\Domain\Model\Group $group)
+    {
+        $this->view->assign('group', $group);
+    }
+    
+    /**
+     * action new
+     *
+     * @return void
+     */
+    public function newAction()
+    {
+        
+    }
+    
+    /**
+     * action create
+     *
+     * @param \TYPO3\Lvaddress\Domain\Model\Group $newGroup
+     * @return void
+     */
+    public function createAction(\TYPO3\Lvaddress\Domain\Model\Group $newGroup)
+    {
+        $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+        $this->groupRepository->add($newGroup);
+        $this->redirect('list');
+    }
+    
+    /**
+     * action edit
+     *
+     * @param \TYPO3\Lvaddress\Domain\Model\Group $group
+     * @ignorevalidation $group
+     * @return void
+     */
+    public function editAction(\TYPO3\Lvaddress\Domain\Model\Group $group)
+    {
+        $this->view->assign('group', $group);
+    }
+    
+    /**
+     * action update
+     *
+     * @param \TYPO3\Lvaddress\Domain\Model\Group $group
+     * @return void
+     */
+    public function updateAction(\TYPO3\Lvaddress\Domain\Model\Group $group)
+    {
+        $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+        $this->groupRepository->update($group);
+        $this->redirect('list');
+    }
+    
+    /**
+     * action delete
+     *
+     * @param \TYPO3\Lvaddress\Domain\Model\Group $group
+     * @return void
+     */
+    public function deleteAction(\TYPO3\Lvaddress\Domain\Model\Group $group)
+    {
+        $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+        $this->groupRepository->remove($group);
+        $this->redirect('list');
+    }
 
 }

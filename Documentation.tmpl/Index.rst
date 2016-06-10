@@ -14,7 +14,7 @@ Adressen
 .. only:: html
 
 	:Classification:
-		lv_address
+		lvaddress
 
 	:Version:
 		|release|
@@ -28,7 +28,7 @@ Adressen
 		comma,separated,list,of,keywords
 
 	:Copyright:
-		2014
+		2016
 
 	:Author:
 
@@ -47,9 +47,8 @@ Adressen
 	**Table of Contents**
 
 .. toctree::
-	:maxdepth: 5
+	:maxdepth: 3
 	:titlesonly:
-	:glob:
 
 	Introduction/Index
 	User/Index
@@ -59,4 +58,4 @@ Adressen
 	KnownProblems/Index
 	ToDoList/Index
 	ChangeLog/Index
-	Targets
+	Links

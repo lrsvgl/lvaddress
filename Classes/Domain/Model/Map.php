@@ -5,7 +5,7 @@ namespace TYPO3\Lvaddress\Domain\Model;
  *
  *  Copyright notice
  *
- *  (c) 2014
+ *  (c) 2016
  *
  *  All rights reserved
  *
@@ -29,84 +29,91 @@ namespace TYPO3\Lvaddress\Domain\Model;
 /**
  * Map
  */
-class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+{
 
-	/**
-	 * area
-	 *
-	 * @var integer
-	 */
-	protected $area = 0;
-
-	/**
-	 * map
-	 *
-	 * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
-	 */
-	protected $map = '';
-
-	/**
-	 * html
-	 *
-	 * @var string
-	 */
-	protected $html = '';
-
-	/**
-	 * Returns the area
-	 *
-	 * @return integer $area
-	 */
-	public function getArea() {
-		return $this->area;
-	}
-
-	/**
-	 * Sets the area
-	 *
-	 * @param integer $area
-	 * @return void
-	 */
-	public function setArea($area) {
-		$this->area = $area;
-	}
-
-	/**
-	 * Returns the html
-	 *
-	 * @return string html
-	 */
-	public function getHtml() {
-		return $this->html;
-	}
-
-	/**
-	 * Sets the html
-	 *
-	 * @param string $html
-	 * @return string html
-	 */
-	public function setHtml($html) {
-		$this->html = $html;
-	}
-
-	/**
-	 * Returns the map
-	 *
-	 * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference map
-	 */
-	public function getMap() {
-		return $this->map;
-	}
-
-	/**
-	 * Sets the map
-	 *
-	 * @param string $map
-	 * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference map
-	 */
-	public function setMap($map) {
-		$this->map = $map;
-	}
+    /**
+     * area
+     *
+     * @var int
+     */
+    protected $area = 0;
+    
+    /**
+     * map
+     *
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     */
+    protected $map = null;
+    
+    /**
+     * html
+     *
+     * @var string
+     */
+    protected $html = '';
+    
+    /**
+     * Returns the area
+     *
+     * @return int $area
+     */
+    public function getArea()
+    {
+        return $this->area;
+    }
+    
+    /**
+     * Sets the area
+     *
+     * @param int $area
+     * @return void
+     */
+    public function setArea($area)
+    {
+        $this->area = $area;
+    }
+    
+    /**
+     * Returns the map
+     *
+     * @return \TYPO3\CMS\Extbase\Domain\Model\FileReference $map
+     */
+    public function getMap()
+    {
+        return $this->map;
+    }
+    
+    /**
+     * Sets the map
+     *
+     * @param \TYPO3\CMS\Extbase\Domain\Model\FileReference $map
+     * @return void
+     */
+    public function setMap(\TYPO3\CMS\Extbase\Domain\Model\FileReference $map)
+    {
+        $this->map = $map;
+    }
+    
+    /**
+     * Returns the html
+     *
+     * @return string $html
+     */
+    public function getHtml()
+    {
+        return $this->html;
+    }
+    
+    /**
+     * Sets the html
+     *
+     * @param string $html
+     * @return void
+     */
+    public function setHtml($html)
+    {
+        $this->html = $html;
+    }
 
 }

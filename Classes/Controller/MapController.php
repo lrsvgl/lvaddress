@@ -5,7 +5,7 @@ namespace TYPO3\Lvaddress\Controller;
  *
  *  Copyright notice
  *
- *  (c) 2014
+ *  (c) 2016
  *
  *  All rights reserved
  *
@@ -29,84 +29,90 @@ namespace TYPO3\Lvaddress\Controller;
 /**
  * MapController
  */
-class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class MapController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+{
 
-	/**
-	 * action list
-	 *
-	 * @return void
-	 */
-	public function listAction() {
-		$maps = $this->mapRepository->findAll();
-		$this->view->assign('maps', $maps);
-	}
-
-	/**
-	 * action show
-	 *
-	 * @param \TYPO3\Lvaddress\Domain\Model\Map $map
-	 * @return void
-	 */
-	public function showAction(\TYPO3\Lvaddress\Domain\Model\Map $map) {
-		$this->view->assign('map', $map);
-	}
-
-	/**
-	 * action new
-	 *
-	 * @param \TYPO3\Lvaddress\Domain\Model\Map $newMap
-	 * @ignorevalidation $newMap
-	 * @return void
-	 */
-	public function newAction(\TYPO3\Lvaddress\Domain\Model\Map $newMap = NULL) {
-		$this->view->assign('newMap', $newMap);
-	}
-
-	/**
-	 * action create
-	 *
-	 * @param \TYPO3\Lvaddress\Domain\Model\Map $newMap
-	 * @return void
-	 */
-	public function createAction(\TYPO3\Lvaddress\Domain\Model\Map $newMap) {
-		$this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-		$this->mapRepository->add($newMap);
-		$this->redirect('list');
-	}
-
-	/**
-	 * action edit
-	 *
-	 * @param \TYPO3\Lvaddress\Domain\Model\Map $map
-	 * @ignorevalidation $map
-	 * @return void
-	 */
-	public function editAction(\TYPO3\Lvaddress\Domain\Model\Map $map) {
-		$this->view->assign('map', $map);
-	}
-
-	/**
-	 * action update
-	 *
-	 * @param \TYPO3\Lvaddress\Domain\Model\Map $map
-	 * @return void
-	 */
-	public function updateAction(\TYPO3\Lvaddress\Domain\Model\Map $map) {
-		$this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-		$this->mapRepository->update($map);
-		$this->redirect('list');
-	}
-
-	/**
-	 * action delete
-	 *
-	 * @param \TYPO3\Lvaddress\Domain\Model\Map $map
-	 * @return void
-	 */
-	public function deleteAction(\TYPO3\Lvaddress\Domain\Model\Map $map) {
-		$this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See <a href="http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain" target="_blank">Wiki</a>', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
-		$this->mapRepository->remove($map);
-		$this->redirect('list');
-	}
+    /**
+     * action list
+     *
+     * @return void
+     */
+    public function listAction()
+    {
+        $maps = $this->mapRepository->findAll();
+        $this->view->assign('maps', $maps);
+    }
+    
+    /**
+     * action show
+     *
+     * @param \TYPO3\Lvaddress\Domain\Model\Map $map
+     * @return void
+     */
+    public function showAction(\TYPO3\Lvaddress\Domain\Model\Map $map)
+    {
+        $this->view->assign('map', $map);
+    }
+    
+    /**
+     * action new
+     *
+     * @return void
+     */
+    public function newAction()
+    {
+        
+    }
+    
+    /**
+     * action create
+     *
+     * @param \TYPO3\Lvaddress\Domain\Model\Map $newMap
+     * @return void
+     */
+    public function createAction(\TYPO3\Lvaddress\Domain\Model\Map $newMap)
+    {
+        $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+        $this->mapRepository->add($newMap);
+        $this->redirect('list');
+    }
+    
+    /**
+     * action edit
+     *
+     * @param \TYPO3\Lvaddress\Domain\Model\Map $map
+     * @ignorevalidation $map
+     * @return void
+     */
+    public function editAction(\TYPO3\Lvaddress\Domain\Model\Map $map)
+    {
+        $this->view->assign('map', $map);
+    }
+    
+    /**
+     * action update
+     *
+     * @param \TYPO3\Lvaddress\Domain\Model\Map $map
+     * @return void
+     */
+    public function updateAction(\TYPO3\Lvaddress\Domain\Model\Map $map)
+    {
+        $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+        $this->mapRepository->update($map);
+        $this->redirect('list');
+    }
+    
+    /**
+     * action delete
+     *
+     * @param \TYPO3\Lvaddress\Domain\Model\Map $map
+     * @return void
+     */
+    public function deleteAction(\TYPO3\Lvaddress\Domain\Model\Map $map)
+    {
+        $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See http://wiki.typo3.org/T3Doc/Extension_Builder/Using_the_Extension_Builder#1._Model_the_domain', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::ERROR);
+        $this->mapRepository->remove($map);
+        $this->redirect('list');
+    }
 
 }

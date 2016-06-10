@@ -1,1 +1,417 @@
-{"modules":[{"config":{"position":[278,23]},"name":"New Model Object","value":{"actionGroup":{"_default0_list":true,"_default1_show":true,"_default2_new_create":true,"_default3_edit_update":true,"_default4_delete":true,"customActions":[]},"name":"Address","objectsettings":{"addDeletedField":true,"addHiddenField":true,"addStarttimeEndtimeFields":true,"aggregateRoot":true,"categorizable":false,"description":"","mapToTable":"","parentClass":"","sorting":false,"type":"Entity","uid":"761740008916"},"propertyGroup":{"properties":[{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"frontpage","propertyType":"Select","uid":"736143776267"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"lastname","propertyType":"String","uid":"1169096137151"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"firstname","propertyType":"String","uid":"321309033460"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"image","propertyType":"Image","uid":"111726809943"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"title","propertyType":"String","uid":"1088054071357"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"function","propertyType":"String","uid":"1012241463950"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"phone","propertyType":"String","uid":"1224214701573"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"fax","propertyType":"String","uid":"830660457530"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"mobile","propertyType":"String","uid":"713211857261"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"email","propertyType":"String","uid":"682424062426"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"www","propertyType":"String","uid":"1197267527268"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"company","propertyType":"String","uid":"28942923810"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"street","propertyType":"String","uid":"66764381888"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"zip","propertyType":"String","uid":"1264476578801"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"city","propertyType":"String","uid":"404383866323"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"state","propertyType":"String","uid":"1167698795982"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"description","propertyType":"RichText","uid":"846554503701"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"country","propertyType":"Select","uid":"515772050649"}]},"relationGroup":{"relations":[{"foreignRelationClass":"","lazyLoading":false,"propertyIsExcludeField":true,"relationDescription":"","relationName":"groups","relationType":"manyToMany","relationWire":"[wired]","uid":"959267577962"}]}}},{"config":{"position":[1236,29]},"name":"New Model Object","value":{"actionGroup":{"_default0_list":true,"_default1_show":true,"_default2_new_create":true,"_default3_edit_update":true,"_default4_delete":true,"customActions":[]},"name":"Map","objectsettings":{"addDeletedField":true,"addHiddenField":true,"addStarttimeEndtimeFields":true,"aggregateRoot":false,"categorizable":false,"description":"","mapToTable":"","parentClass":"","sorting":false,"type":"Entity","uid":"909362277976"},"propertyGroup":{"properties":[{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"area","propertyType":"Select","uid":"771062334250"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"map","propertyType":"Image","uid":"1020767440026"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"html","propertyType":"Text","uid":"450982313058"}]},"relationGroup":{"relations":[]}}},{"config":{"position":[683,21]},"name":"New Model Object","value":{"actionGroup":{"_default0_list":true,"_default1_show":true,"_default2_new_create":true,"_default3_edit_update":true,"_default4_delete":true,"customActions":[]},"name":"Group","objectsettings":{"addDeletedField":true,"addHiddenField":true,"addStarttimeEndtimeFields":true,"aggregateRoot":false,"categorizable":false,"description":"","mapToTable":"","parentClass":"","sorting":false,"type":"Entity","uid":"162970562660"},"propertyGroup":{"properties":[{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"name","propertyType":"String","uid":"1350331474897"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"image","propertyType":"Image","uid":"932992402739"},{"allowedFileTypes":"","maxItems":"1","propertyDescription":"","propertyIsExcludeField":true,"propertyIsRequired":false,"propertyName":"description","propertyType":"RichText","uid":"311231853212"}]},"relationGroup":{"relations":[]}}}],"properties":{"backendModules":[],"description":"","emConf":{"category":"plugin","custom_category":"","dependsOn":"extbase => 6.2\nfluid => 6.2\ntypo3 => 6.2\nstatic_info_tables =>6.0\n","disableLocalization":false,"disableVersioning":false,"priority":"","shy":false,"state":"alpha","targetVersion":"6.2","version":""},"extensionKey":"lv_address","name":"Adressen","originalExtensionKey":"lv_address","persons":[],"plugins":[{"actions":{"controllerActionCombinations":"Address=>list,show,create,edit,update,delete\n","noncacheableActions":"Address=>create,update,delete\n","switchableActions":""},"key":"addresslist","name":"Addresslist"},{"actions":{"controllerActionCombinations":"Address=>teaser\n","noncacheableActions":"\n","switchableActions":""},"key":"addressteaser","name":"Addressteaser"}],"vendorName":"TYPO3"},"wires":[{"src":{"moduleId":0,"terminal":"relationWire_0","uid":"959267577962"},"tgt":{"moduleId":2,"terminal":"SOURCES","uid":"162970562660"}}],"log":{"last_modified":"2014-05-28 05:09","extension_builder_version":"6.1","be_user":"Lars Vogel (1)"}}
+{
+    "modules": [
+        {
+            "config": {
+                "position": [
+                    278,
+                    23
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": []
+                },
+                "name": "Address",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": true,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "761740008916"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "lastname",
+                            "propertyType": "String",
+                            "uid": "1169096137151"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "firstname",
+                            "propertyType": "String",
+                            "uid": "321309033460"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "image",
+                            "propertyType": "Image",
+                            "uid": "111726809943"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "title",
+                            "propertyType": "String",
+                            "uid": "1088054071357"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "function",
+                            "propertyType": "String",
+                            "uid": "1012241463950"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "phone",
+                            "propertyType": "String",
+                            "uid": "1224214701573"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "fax",
+                            "propertyType": "String",
+                            "uid": "830660457530"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "mobile",
+                            "propertyType": "String",
+                            "uid": "713211857261"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "email",
+                            "propertyType": "String",
+                            "uid": "682424062426"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "www",
+                            "propertyType": "String",
+                            "uid": "1197267527268"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "company",
+                            "propertyType": "String",
+                            "uid": "28942923810"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "street",
+                            "propertyType": "String",
+                            "uid": "66764381888"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "zip",
+                            "propertyType": "String",
+                            "uid": "1264476578801"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "city",
+                            "propertyType": "String",
+                            "uid": "404383866323"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "state",
+                            "propertyType": "String",
+                            "uid": "1167698795982"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "description",
+                            "propertyType": "RichText",
+                            "uid": "846554503701"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "country",
+                            "propertyType": "Select",
+                            "uid": "515772050649"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": [
+                        {
+                            "foreignRelationClass": "",
+                            "lazyLoading": false,
+                            "propertyIsExcludeField": true,
+                            "relationDescription": "",
+                            "relationName": "groups",
+                            "relationType": "manyToMany",
+                            "relationWire": "[wired]",
+                            "uid": "959267577962"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    1236,
+                    29
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": []
+                },
+                "name": "Map",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": false,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "909362277976"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "area",
+                            "propertyType": "Select",
+                            "uid": "771062334250"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "map",
+                            "propertyType": "Image",
+                            "uid": "1020767440026"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "html",
+                            "propertyType": "Text",
+                            "uid": "450982313058"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        },
+        {
+            "config": {
+                "position": [
+                    683,
+                    21
+                ]
+            },
+            "name": "New Model Object",
+            "value": {
+                "actionGroup": {
+                    "_default0_list": true,
+                    "_default1_show": true,
+                    "_default2_new_create": true,
+                    "_default3_edit_update": true,
+                    "_default4_delete": true,
+                    "customActions": []
+                },
+                "name": "Group",
+                "objectsettings": {
+                    "addDeletedField": true,
+                    "addHiddenField": true,
+                    "addStarttimeEndtimeFields": true,
+                    "aggregateRoot": false,
+                    "categorizable": false,
+                    "description": "",
+                    "mapToTable": "",
+                    "parentClass": "",
+                    "sorting": false,
+                    "type": "Entity",
+                    "uid": "162970562660"
+                },
+                "propertyGroup": {
+                    "properties": [
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "name",
+                            "propertyType": "String",
+                            "uid": "1350331474897"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "image",
+                            "propertyType": "Image",
+                            "uid": "932992402739"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "description",
+                            "propertyType": "RichText",
+                            "uid": "311231853212"
+                        }
+                    ]
+                },
+                "relationGroup": {
+                    "relations": []
+                }
+            }
+        }
+    ],
+    "properties": {
+        "backendModules": [],
+        "description": "",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "extbase => 6.2\nfluid => 6.2\ntypo3 => 6.2\nstatic_info_tables =>6.0\n",
+            "disableLocalization": false,
+            "disableVersioning": false,
+            "skipGenerateDocumentationTemplate": false,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "7.6.0-7.6.99",
+            "version": ""
+        },
+        "extensionKey": "lvaddress",
+        "name": "Adressen",
+        "originalExtensionKey": "lvaddress",
+        "originalVendorName": "TYPO3",
+        "persons": [],
+        "plugins": [
+            {
+                "actions": {
+                    "controllerActionCombinations": "Address=>list,show,create,edit,update,delete\n",
+                    "noncacheableActions": "Address=>create,update,delete\n",
+                    "switchableActions": ""
+                },
+                "key": "addresslist",
+                "name": "Addresslist"
+            }
+        ],
+        "vendorName": "TYPO3"
+    },
+    "wires": [
+        {
+            "src": {
+                "moduleId": 0,
+                "terminal": "relationWire_0",
+                "uid": "959267577962"
+            },
+            "tgt": {
+                "moduleId": 2,
+                "terminal": "SOURCES",
+                "uid": "162970562660"
+            }
+        }
+    ],
+    "log": {
+        "last_modified": "2016-06-10 09:50",
+        "extension_builder_version": "7.6.0",
+        "be_user": "Lars Vogel (2)"
+    }
+}

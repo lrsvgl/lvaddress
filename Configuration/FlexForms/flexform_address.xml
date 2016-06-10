@@ -9,7 +9,6 @@
                 <type>array</type>
                 <el>
                      <settings.group>
-
                         <TCEforms>
                             <label>Gruppe wählen</label> 
                             <config>
@@ -24,6 +23,24 @@
                             </config>
                         </TCEforms>
                     </settings.group>
+                    <settings.imgWidth>
+                        <TCEforms>
+                            <label>max. Bildbreite</label>
+                            <config>
+                                <type>input</type>
+                                <size>5</size>
+                            </config>
+                        </TCEforms>
+                    </settings.imgWidth>
+                    <settings.imgHeight>
+                        <TCEforms>
+                            <label>max. Bildhöhe</label>
+                            <config>
+                                <type>input</type>
+                                <size>5</size>
+                            </config>
+                        </TCEforms>
+                    </settings.imgHeight>
  
                     <!--
                     <settings.area>

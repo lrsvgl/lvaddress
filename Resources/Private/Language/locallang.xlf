@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2014-05-28T17:09:19Z" product-name="lv_address">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-06-10T09:50:05Z" product-name="lvaddress">
 		<header/>
 		<body>
-			
 			<trans-unit id="tx_lvaddress_domain_model_address">
 				<source>Address</source>
-			</trans-unit>
-			<trans-unit id="tx_lvaddress_domain_model_address.frontpage">
-				<source>Frontpage</source>
 			</trans-unit>
 			<trans-unit id="tx_lvaddress_domain_model_address.lastname">
 				<source>Lastname</source>
