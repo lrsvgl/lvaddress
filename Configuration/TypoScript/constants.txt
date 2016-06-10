@@ -1,0 +1,15 @@
+
+plugin.tx_lvaddress {
+	view {
+		# cat=plugin.tx_lvaddress/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:lv_address/Resources/Private/Templates/
+		# cat=plugin.tx_lvaddress/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:lv_address/Resources/Private/Partials/
+		# cat=plugin.tx_lvaddress/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:lv_address/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_lvaddress//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

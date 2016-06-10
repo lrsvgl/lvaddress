@@ -1,0 +1,77 @@
+
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Extension</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.area>
+                        <TCEforms>
+                            <label>Bereich wählen</label> 
+                            <config>
+                                <type>select</type>
+                                <foreign_table>tx_lvaddress_domain_model_map</foreign_table>
+                                <minitems>1</minitems>
+                                <maxitems>1</maxitems>
+                                <multiple>1</multiple>
+                                <size>10</size>
+                                <autoSizeMax>30</autoSizeMax>
+                                <itemListStyle>Width:350px</itemListStyle>
+                            </config>
+                        </TCEforms>
+                    </settings.area> 
+                    <settings.group>
+                        <TCEforms>
+                            <label>Gruppe wählen</label> 
+                            <config>
+                                <type>select</type>
+                                <foreign_table>tx_lvaddress_domain_model_group</foreign_table>
+                                <minitems>1</minitems>
+                                <maxitems>1</maxitems>
+                                <multiple>1</multiple>
+                                <size>10</size>
+                                <autoSizeMax>30</autoSizeMax>
+                                <itemListStyle>Width:350px</itemListStyle>
+                            </config>
+                        </TCEforms>
+                    </settings.group>
+                    <!--
+                    <switchableControllerActions>
+                        <TCEforms>
+                            <label>Standardaktion des Plugins</label> 
+                            <config>
+                                <type>select</type>
+                                <items> 
+                                    <numIndex index="0">
+                                        <numIndex index="0">Kategorieübersicht</numIndex>
+                                        <numIndex index="1">Produktkategorie->list</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1">
+                                        <numIndex index="0">Library</numIndex>
+                                        <numIndex index="1">Book->list</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">Library details</numIndex>
+                                        <numIndex index="1">Book->show</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3">
+                                        <numIndex index="0">Library search</numIndex>
+                                        <numIndex index="1">Book->search</numIndex>
+                                    </numIndex>
+                                    <numIndex index="4">
+                                        <numIndex index="0">Library type</numIndex>
+                                        <numIndex index="1">Book->type</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </switchableControllerActions>
+                    -->
+                </el>
+            </ROOT>
+        </sDEF> 
+    </sheets>
+</T3DataStructure> 

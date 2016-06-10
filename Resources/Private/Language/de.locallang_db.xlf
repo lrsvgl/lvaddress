@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" target-language="de" datatype="plaintext" original="messages" date="2013-07-24T11:09:52Z" product-name="lv_proddb">
+		<header/>
+		<body>
+			
+			<trans-unit id="tx_lvaddress_domain_model_address">
+				<target>Adresse</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.lastname">
+				<target>Nachname</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.firstname">
+				<target>Vorname</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.image">
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.title">
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.function">
+				<target>Funktion</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.phone">
+				<target>Telefon</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.fax">
+				<target>Fax</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.mobile">
+				<target>Mobil</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.email">
+				<target>E-Mail</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.www">
+				<target>Internet</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.company">
+				<target>Firma</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.street">
+				<target>Straße</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.zip">
+				<target>PLZ</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.city">
+				<target>Stadt</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.state">
+				<target>Land</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.description">
+				<target>Beschreibung</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.country">
+				<target>Länderauswahl</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.groups">
+				<target>Gruppe</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_map">
+				<target>Karte</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_map.area">
+				<target>Bereich</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_map.map">
+				<target>Karte</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_map.html">
+				<target>Html</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_group">
+				<target>Gruppe</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_group.name">
+				<target>Name</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_group.image">
+				<target>Bild</target>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_group.description">
+				<target>Beschreibung</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

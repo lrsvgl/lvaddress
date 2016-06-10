@@ -1,0 +1,96 @@
+{namespace urs=TYPO3\Lvaddress\ViewHelpers}
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+    <f:flashMessages renderMode="div" />
+    <f:form name="filter" action="list" controller="Address" method="post" enctype="multipart/form-data">
+        <f:form.select name="country" options="{countries}" optionValueField="uid" optionLabelField="cnShortEn" sortByOptionLabel="1" additionalAttributes="{onchange: 'document.filter.submit()'}" value="{countryUid}" />
+
+    </f:form>
+    <div id="map">
+        <f:if condition="{map.map.originalResource.originalFile.uid}">
+            <f:image src="{map.map.originalResource.originalFile.uid}" usemap="#imgmap" alt=" {map.map.originalResource.name}" />
+            <div id="imgmapdiv"> 
+                <f:format.html parseFuncTSPath="">{map.html}</f:format.html>
+            </div>
+        </f:if>
+    </div>
+    <f:widget.paginate objects="{addresses}" as="page" configuration="{itemsPerPage: 20, insertAbove: 1, insertBelow: 1, maximumNumberOfLinks: 20}">
+        <ul class="addresses box clearfix">
+            <f:for each="{page}" as="address">
+                <li class="address clearfix">
+                    <div class="img">
+                        <f:if condition="{address.image.originalResource.originalFile.uid}">
+                            <f:link.action action="show" arguments="{address : address}"><f:image src="{address.image.originalResource.originalFile.uid}" width="160" alt=" {address.image.originalResource.name}" /></f:link.action>
+                        </f:if>
+                    </div>
+                    <div class="adr clearfix">
+                        <f:if condition="{address.company}">
+                            <f:then>
+                                <h2 class="data company">{address.company}</h2>
+                                <div class="name">{address.firstname} {address.lastname}</div>                    
+                            </f:then>
+                            <f:else>
+                                <h2 class="name">{address.firstname} {address.lastname}</h2>
+                            </f:else>
+                        </f:if>
+                        <div class="title">{address.title}</div>
+                        <div class="data function">{address.function}</div>
+                        <div class="data street">{address.street}</div>
+                        <div class="data city">{address.zip} {address.city}</div>
+                        <div class="data state">{address.state}</div>
+                        <f:if condition="{address.phone}">
+                            <div class="data phone clearfix">
+                                <span class="label"><f:translate key="tx_lvaddress_domain_model_address.phone" /></span>
+                                <span class="data">{address.phone}</span>
+                            </div>
+                        </f:if>
+                        <f:if condition="{address.fax}">
+                            <div class="data fax clearfix">
+                                <span class="label"><f:translate key="tx_lvaddress_domain_model_address.fax" /></span>
+                                <span class="data">{address.fax}</span>
+                            </div>
+                        </f:if>
+                        <f:if condition="{address.mobile}">
+                            <div class="data mobile clearfix">
+                                <span class="label"><f:translate key="tx_lvaddress_domain_model_address.mobile" /></span>
+                                <span class="data">{address.mobile}</span>
+                            </div>
+                        </f:if>
+                        <div class="data email"><a href="mailto:{address.email}">{address.email}</a></div>
+                        <div class="data www"><urs:getDomain link="{address.www}" /></div>
+                    </div>
+                </li>
+            </f:for>
+        </ul>
+    </f:widget.paginate>
+
+    <script type="text/javascript">
+    <!--
+        < f:for each = "{countries}" as = "country" >
+                jQuery('#{country.iso2}').attr('title', '{country.cnShortEn}');
+                jQuery('#{country.iso2}').attr('alt', '{country.cnShortEn}');
+                jQuery('#{country.iso2}').click(function() {
+        location.href = 'index.php?id={pageId}&tx_lvaddress_addresslist[country]={country.uid}';
+                return false;
+        });
+                < /f:for>
+    //-->
+    </script>
+
+
+
+
+</f:section>

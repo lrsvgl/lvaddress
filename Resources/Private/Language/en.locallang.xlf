@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="de" target-language="en" datatype="plaintext" original="messages" date="2013-07-24T11:09:52Z" product-name="lv_proddb">
+		<header/>
+		<body>
+			<trans-unit id="tx_lvaddress_domain_model_address.info">
+            	<target>Many clients have relied on our expertise for years.</target>
+            </trans-unit>
+		</body>
+	</file>
+</xliff>

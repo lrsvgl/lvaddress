@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-04-30T11:12:07Z" product-name="lv_address">
+		<header/>
+		<body>
+			
+			<trans-unit id="tx_lvaddress_domain_model_address">
+				<source>Address</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.lastname">
+				<source>Vorname</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.firstname">
+				<source>Nachname</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.image">
+				<source>Bild</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.title">
+				<source>Titel</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.function">
+				<source>Funktion</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.phone">
+				<source>Telefon</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.fax">
+				<source>Fax</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.mobile">
+				<source>Mobil</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.email">
+				<source>E-Mail</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.www">
+				<source>Internet</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.company">
+				<source>Firma</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.street">
+				<source>Straße</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.zip">
+				<source>PLZ</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.city">
+				<source>Stadt</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.state">
+				<source>Land</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.description">
+				<source>Beschreibung</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.country">
+				<source>Länderauswahl</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.groups">
+				<source>Gruppe</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_map">
+				<source>Karte</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_map.area">
+				<source>Bereich</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_map.map">
+				<source>Karte</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_map.html">
+				<source>Html</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_group">
+				<source>Gruppe</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_group.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_group.image">
+				<source>Bild</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_group.description">
+				<source>Beschreibung</source>
+			</trans-unit>
+                        <trans-unit id="tx_lvaddress_domain_model_address.back">
+				<source>zurück</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

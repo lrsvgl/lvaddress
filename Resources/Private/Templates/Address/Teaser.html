@@ -1,0 +1,41 @@
+{namespace urs=TYPO3\Lvaddress\ViewHelpers}
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+    <f:flashMessages renderMode="div" />
+
+    <div class="address-teaser clearfix">
+        <ul class="address-teaser-list">
+            <f:for each="{addresses}" as="address">
+                <f:if condition="{address.image.originalResource.originalFile.uid}">
+                    <li class="address-teaser-item">
+                        <div class="img">
+                            <a href="/ueber-carpe-verba/referenzen.html">
+                                <f:image src="{address.image.originalResource.originalFile.uid}" width="200" height="200" alt=" {address.image.originalResource.name}" />
+                            </a>
+                        </div>
+                    </li>
+                </f:if>
+            </f:for>
+        </ul>
+        <div class="caption d">
+            <p><a href="{reflink}"><f:translate key="tx_lvaddress_domain_model_address.info" /></a></p>
+        </div>
+    </div>
+
+
+
+
+</f:section>

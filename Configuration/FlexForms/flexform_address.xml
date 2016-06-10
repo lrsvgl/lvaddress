@@ -1,0 +1,49 @@
+
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Extension</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                     <settings.group>
+
+                        <TCEforms>
+                            <label>Gruppe wählen</label> 
+                            <config>
+                                <type>select</type>
+                                <foreign_table>tx_lvaddress_domain_model_group</foreign_table>
+                                <minitems>1</minitems>
+                                <maxitems>1</maxitems>
+                                <multiple>1</multiple>
+                                <size>10</size>
+                                <autoSizeMax>30</autoSizeMax>
+                                <itemListStyle>Width:350px</itemListStyle>
+                            </config>
+                        </TCEforms>
+                    </settings.group>
+ 
+                    <!--
+                    <settings.area>
+                        <TCEforms>
+                            <label>Bereich wählen</label> 
+                            <config>
+                                <type>select</type>
+                                <foreign_table>tx_lvaddress_domain_model_map</foreign_table>
+                                <minitems>0</minitems>
+                                <maxitems>1</maxitems>
+                                <multiple>1</multiple>
+                                <size>10</size>
+                                <autoSizeMax>30</autoSizeMax>
+                                <itemListStyle>Width:350px</itemListStyle>
+                            </config>
+                        </TCEforms>
+                    </settings.area> 
+                    -->
+                </el>
+            </ROOT>
+        </sDEF> 
+    </sheets>
+</T3DataStructure> 
