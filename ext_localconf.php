@@ -22,3 +22,6 @@ call_user_func(
     },
     $_EXTKEY
 );
+if (!is_array($TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['lvaddress_cache'])) {
+	$TYPO3_CONF_VARS['SYS']['caching']['cacheConfigurations']['lvaddress_cache'] = array();
+}

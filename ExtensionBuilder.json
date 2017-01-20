@@ -15,7 +15,9 @@
                     "_default2_new_create": true,
                     "_default3_edit_update": true,
                     "_default4_delete": true,
-                    "customActions": []
+                    "customActions": [
+                        "singleView"
+                    ]
                 },
                 "name": "Address",
                 "objectsettings": {
@@ -236,7 +238,9 @@
                     "_default2_new_create": true,
                     "_default3_edit_update": true,
                     "_default4_delete": true,
-                    "customActions": []
+                    "customActions": [
+
+                    ]
                 },
                 "name": "Map",
                 "objectsettings": {
@@ -287,7 +291,9 @@
                     ]
                 },
                 "relationGroup": {
-                    "relations": []
+                    "relations": [
+
+                    ]
                 }
             }
         },
@@ -306,7 +312,9 @@
                     "_default2_new_create": true,
                     "_default3_edit_update": true,
                     "_default4_delete": true,
-                    "customActions": []
+                    "customActions": [
+
+                    ]
                 },
                 "name": "Group",
                 "objectsettings": {
@@ -357,13 +365,17 @@
                     ]
                 },
                 "relationGroup": {
-                    "relations": []
+                    "relations": [
+
+                    ]
                 }
             }
         }
     ],
     "properties": {
-        "backendModules": [],
+        "backendModules": [
+
+        ],
         "description": "",
         "emConf": {
             "category": "plugin",
@@ -381,7 +393,9 @@
         "name": "Adressen",
         "originalExtensionKey": "lvaddress",
         "originalVendorName": "TYPO3",
-        "persons": [],
+        "persons": [
+
+        ],
         "plugins": [
             {
                 "actions": {
@@ -410,7 +424,7 @@
         }
     ],
     "log": {
-        "last_modified": "2016-06-10 09:50",
+        "last_modified": "2016-08-03 12:38",
         "extension_builder_version": "7.6.0",
         "be_user": "Lars Vogel (2)"
     }

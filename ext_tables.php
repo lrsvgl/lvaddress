@@ -8,7 +8,7 @@ call_user_func(
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
             'TYPO3.' . $extKey,
             'Addresslist',
-            'Addresslist'
+            'Ansprechpartner'
         );
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($extKey, 'Configuration/TypoScript', 'Adressen');

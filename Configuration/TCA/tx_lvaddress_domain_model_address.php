@@ -2,11 +2,11 @@
 return [
     'ctrl' => [
         'title'	=> 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address',
-        'label' => 'lastname',
+	    'label' => 'lastname',
 	    'label_alt' => 'firstname',
 	    'label_alt_force' => 1,
 	    'sortby' => 'sorting',
-	    //'default_sortby' => ',lastname,firstname',
+	    'default_sortby' => ' lastname,firstname ASC',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',

@@ -1,16 +1,44 @@
 
 <T3DataStructure>
     <sheets>
-        <sDEF>
+        <sDEF1>
             <ROOT>
                 <TCEforms>
-                    <sheetTitle>Extension</sheetTitle>
+                    <sheetTitle>Ansprechpartner Akion</sheetTitle>
                 </TCEforms>
                 <type>array</type>
                 <el>
-                     <settings.group>
+                    <switchableControllerActions>
                         <TCEforms>
-                            <label>Gruppe wählen</label> 
+                            <label>Standardaktion des Plugins</label>
+                            <config>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="1">
+                                        <numIndex index="0">Ansprechpartner Liste</numIndex>
+                                        <numIndex index="1">Address->list;Address->show;</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">Ansprechpartner Einzelansicht</numIndex>
+                                        <numIndex index="1">Address->singleView;</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                        </TCEforms>
+                    </switchableControllerActions>
+                </el>
+            </ROOT>
+        </sDEF1>
+        <sDEF2>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Einstellungen Gruppe</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.groupUid>
+                        <TCEforms>
+                            <label>Gruppe wählen</label>
                             <config>
                                 <type>select</type>
                                 <foreign_table>tx_lvaddress_domain_model_group</foreign_table>
@@ -22,7 +50,7 @@
                                 <itemListStyle>Width:350px</itemListStyle>
                             </config>
                         </TCEforms>
-                    </settings.group>
+                    </settings.groupUid>
                     <settings.imgWidth>
                         <TCEforms>
                             <label>max. Bildbreite</label>
@@ -41,14 +69,22 @@
                             </config>
                         </TCEforms>
                     </settings.imgHeight>
- 
-                    <!--
-                    <settings.area>
+                </el>
+            </ROOT>
+        </sDEF2>
+        <sDEF3>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>Einstellungen Einzelansicht</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.singleUid>
                         <TCEforms>
-                            <label>Bereich wählen</label> 
+                            <label>Ansprechpartner wählen</label>
                             <config>
                                 <type>select</type>
-                                <foreign_table>tx_lvaddress_domain_model_map</foreign_table>
+                                <foreign_table>tx_lvaddress_domain_model_address</foreign_table>
                                 <minitems>0</minitems>
                                 <maxitems>1</maxitems>
                                 <multiple>1</multiple>
@@ -57,10 +93,27 @@
                                 <itemListStyle>Width:350px</itemListStyle>
                             </config>
                         </TCEforms>
-                    </settings.area> 
-                    -->
+                    </settings.singleUid>
+                    <settings.singleImgWidth>
+                        <TCEforms>
+                            <label>max. Bildbreite</label>
+                            <config>
+                                <type>input</type>
+                                <size>5</size>
+                            </config>
+                        </TCEforms>
+                    </settings.singleImgWidth>
+                    <settings.singleImgHeight>
+                        <TCEforms>
+                            <label>max. Bildhöhe</label>
+                            <config>
+                                <type>input</type>
+                                <size>5</size>
+                            </config>
+                        </TCEforms>
+                    </settings.singleImgHeight>
                 </el>
             </ROOT>
-        </sDEF> 
+        </sDEF3>
     </sheets>
 </T3DataStructure> 

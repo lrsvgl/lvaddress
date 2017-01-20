@@ -122,5 +122,19 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         $this->addressRepository->remove($address);
         $this->redirect('list');
     }
+    
+    /**
+     * action singleView
+     *
+     * @return void
+     */
+    public function singleViewAction()
+    {
+    	//debug($this->settings);
+    	$addressUid = $this->settings['singleUid'];
+	    $address = $this->addressRepository->findByUid($addressUid);
+	    $this->view->assign('address', $address);
+        
+    }
 
 }

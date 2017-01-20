@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-06-10T09:50:05Z" product-name="lvaddress">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-08-03T12:38:00Z" product-name="lvaddress">
 		<header/>
 		<body>
 			<trans-unit id="lastname.description">

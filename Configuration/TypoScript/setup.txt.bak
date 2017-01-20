@@ -17,6 +17,6 @@ plugin.tx_lvaddress_addresslist {
     }
     settings {
         detailsPid = {$plugin.tx_lvaddress_addresslist.settings.detailsPid}
-        categoryPid = {$plugin.tx_lvaddress_addresslist.settings.categoryPid}
+        listPid = {$plugin.tx_lvaddress_addresslist.settings.listPid}
     }
 }

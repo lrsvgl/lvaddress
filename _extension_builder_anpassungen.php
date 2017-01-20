@@ -17,12 +17,19 @@ $pluginSignature = str_replace('_', '', $_EXTKEY) . '_addresslist';
 $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_address.xml');
 
+
+/* ========================
+  TCA
+  ======================== */
+
+    // address
+
 array(
     'ctrl' => [
         'label' => 'lastname',
         'label_alt' => 'firstname',
         'label_alt_force' => 1,
-        //'sortby' => 'sorting',
+        'sortby' => 'sorting',
         //'default_sortby' => ',lastname,firstname',
 
     ]
