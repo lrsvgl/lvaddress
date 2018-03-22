@@ -26,33 +26,44 @@ namespace TYPO3\Lvaddress\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+/***
+ *
+ * This file is part of the "Adressen" Extension for TYPO3 CMS.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *
+ *  (c) 2018
+ *
+ ***/
+
 /**
  * Map
  */
 class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
-
     /**
      * area
      *
      * @var int
      */
     protected $area = 0;
-    
+
     /**
      * map
      *
      * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     * @cascade remove
      */
     protected $map = null;
-    
+
     /**
      * html
      *
      * @var string
      */
     protected $html = '';
-    
+
     /**
      * Returns the area
      *
@@ -62,7 +73,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->area;
     }
-    
+
     /**
      * Sets the area
      *
@@ -73,7 +84,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->area = $area;
     }
-    
+
     /**
      * Returns the map
      *
@@ -83,7 +94,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->map;
     }
-    
+
     /**
      * Sets the map
      *
@@ -94,7 +105,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->map = $map;
     }
-    
+
     /**
      * Returns the html
      *
@@ -104,7 +115,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->html;
     }
-    
+
     /**
      * Sets the html
      *
@@ -115,5 +126,4 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->html = $html;
     }
-
 }

@@ -6,6 +6,9 @@
 			<trans-unit id="tx_lvaddress_domain_model_address.info">
             	<target>Many clients have relied on our expertise for years.</target>
             </trans-unit>
+            <trans-unit id="tx_lvaddress_domain_model_address.internalpage">
+                <target>Research Area</target>
+            </trans-unit>
 		</body>
 	</file>
 </xliff>

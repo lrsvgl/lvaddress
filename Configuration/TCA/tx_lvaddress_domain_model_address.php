@@ -5,54 +5,51 @@ return [
 	    'label' => 'lastname',
 	    'label_alt' => 'firstname',
 	    'label_alt_force' => 1,
-	    'sortby' => 'sorting',
-	    'default_sortby' => ' lastname,firstname ASC',
+	    //'sortby' => 'sorting',
+	    //'default_sortby' => ',lastname,firstname',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-        'dividers2tabs' => true,
-		'versioningWS' => 2,
-        'versioning_followPages' => true,
-
+		'versioningWS' => true,
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
 		'delete' => 'deleted',
-        'enablecolumns' => [
-			'disabled' => 'hidden',
-			'starttime' => 'starttime',
+		'enablecolumns' => [
+            'disabled' => 'hidden',
+            'starttime' => 'starttime',
             'endtime' => 'endtime',
         ],
-        'searchFields' => 'lastname,firstname,image,title,function,phone,fax,mobile,email,www,company,street,zip,city,state,description,country,groups,',
-        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('lvaddress') . 'Resources/Public/Icons/tx_lvaddress_domain_model_address.gif'
+		'searchFields' => 'lastname,firstname,image,title,function,phone,fax,mobile,email,www,company,street,zip,city,state,description,country,internalpage,groups',
+        'iconfile' => 'EXT:lvaddress/Resources/Public/Icons/tx_lvaddress_domain_model_address.gif'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, lastname, firstname, image, title, function, phone, fax, mobile, email, www, company, street, zip, city, state, description, country, groups',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, lastname, firstname, image, title, function, phone, fax, mobile, email, www, company, street, zip, city, state, description, country, internalpage, groups',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, lastname, firstname, image, title, function, phone, fax, mobile, email, www, company, street, zip, city, state, description;;;richtext:rte_transform[mode=ts_links], country, groups, --div--;LLL:EXT:cms/locallang_ttc.xlf:tabs.access, starttime, endtime'],
-    ],
-    'palettes' => [
-        '1' => ['showitem' => ''],
+		'1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, lastname, firstname, image, title, function, phone, fax, mobile, email, www, company, street, zip, city, state, description, country, internalpage, groups, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'columns' => [
-        'sys_language_uid' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'foreign_table' => 'sys_language',
-                'foreign_table_where' => 'ORDER BY sys_language.title',
-                'items' => [
-                    ['LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages', -1],
-                    ['LLL:EXT:lang/locallang_general.xlf:LGL.default_value', 0]
-                ],
-            ],
+		'sys_language_uid' => [
+			'exclude' => true,
+			'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
+			'config' => [
+				'type' => 'select',
+				'renderType' => 'selectSingle',
+				'special' => 'languages',
+				'items' => [
+					[
+						'LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages',
+						-1,
+						'flags-multiple'
+					]
+				],
+				'default' => 0,
+			],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'exclude' => 1,
+            'exclude' => true,
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
             'config' => [
                 'type' => 'select',
@@ -69,7 +66,7 @@ return [
                 'type' => 'passthrough',
             ],
         ],
-        't3ver_label' => [
+		't3ver_label' => [
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
             'config' => [
                 'type' => 'input',
@@ -77,74 +74,69 @@ return [
                 'max' => 255,
             ],
         ],
-        'hidden' => [
-            'exclude' => 1,
+		'hidden' => [
+            'exclude' => true,
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
+                'items' => [
+                    '1' => [
+                        '0' => 'LLL:EXT:lang/locallang_core.xlf:labels.enabled'
+                    ]
+                ],
             ],
         ],
-        'starttime' => [
-            'exclude' => 1,
+		'starttime' => [
+            'exclude' => true,
             'l10n_mode' => 'mergeIfNotBlank',
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
             'config' => [
                 'type' => 'input',
                 'size' => 13,
-                'max' => 20,
                 'eval' => 'datetime',
-                'checkbox' => 0,
                 'default' => 0,
-                'range' => [
-                    'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-                ],
-            ],
+            ]
         ],
         'endtime' => [
-            'exclude' => 1,
+            'exclude' => true,
             'l10n_mode' => 'mergeIfNotBlank',
             'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
             'config' => [
                 'type' => 'input',
                 'size' => 13,
-                'max' => 20,
                 'eval' => 'datetime',
-                'checkbox' => 0,
                 'default' => 0,
                 'range' => [
-                    'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y'))
-                ],
+                    'upper' => mktime(0, 0, 0, 1, 1, 2038)
+                ]
             ],
         ],
-
-	    'lastname' => [
-	        'exclude' => 1,
+        'lastname' => [
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.lastname',
 	        'config' => [
 			    'type' => 'input',
 			    'size' => 30,
 			    'eval' => 'trim'
 			],
-	        
 	    ],
 	    'firstname' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.firstname',
 	        'config' => [
 			    'type' => 'input',
 			    'size' => 30,
 			    'eval' => 'trim'
 			],
-	        
 	    ],
 	    'image' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.image',
 	        'config' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::getFileFieldTCAConfig(
 			    'image',
 			    [
 			        'appearance' => [
-			            'createNewRelationLinkTitle' => 'LLL:EXT:cms/locallang_ttc.xlf:images.addFileReference'
+			            'createNewRelationLinkTitle' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:images.addFileReference'
 			        ],
 			        'foreign_types' => [
 			            '0' => [
@@ -182,130 +174,117 @@ return [
 			    ],
 			    $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']
 			),
-	        
 	    ],
 	    'title' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.title',
 	        'config' => [
 			    'type' => 'input',
 			    'size' => 30,
 			    'eval' => 'trim'
 			],
-	        
 	    ],
 	    'function' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.function',
 	        'config' => [
 			    'type' => 'input',
 			    'size' => 30,
 			    'eval' => 'trim'
 			],
-	        
 	    ],
 	    'phone' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.phone',
 	        'config' => [
 			    'type' => 'input',
 			    'size' => 30,
 			    'eval' => 'trim'
 			],
-	        
 	    ],
 	    'fax' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.fax',
 	        'config' => [
 			    'type' => 'input',
 			    'size' => 30,
 			    'eval' => 'trim'
 			],
-	        
 	    ],
 	    'mobile' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.mobile',
 	        'config' => [
 			    'type' => 'input',
 			    'size' => 30,
 			    'eval' => 'trim'
 			],
-	        
 	    ],
 	    'email' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.email',
 	        'config' => [
 			    'type' => 'input',
 			    'size' => 30,
 			    'eval' => 'trim'
 			],
-	        
 	    ],
 	    'www' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.www',
 	        'config' => [
 			    'type' => 'input',
 			    'size' => 30,
 			    'eval' => 'trim'
 			],
-	        
 	    ],
 	    'company' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.company',
 	        'config' => [
 			    'type' => 'input',
 			    'size' => 30,
 			    'eval' => 'trim'
 			],
-	        
 	    ],
 	    'street' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.street',
 	        'config' => [
 			    'type' => 'input',
 			    'size' => 30,
 			    'eval' => 'trim'
 			],
-	        
 	    ],
 	    'zip' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.zip',
 	        'config' => [
 			    'type' => 'input',
 			    'size' => 30,
 			    'eval' => 'trim'
 			],
-	        
 	    ],
 	    'city' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.city',
 	        'config' => [
 			    'type' => 'input',
 			    'size' => 30,
 			    'eval' => 'trim'
 			],
-	        
 	    ],
 	    'state' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.state',
 	        'config' => [
 			    'type' => 'input',
 			    'size' => 30,
 			    'eval' => 'trim'
 			],
-	        
 	    ],
 	    'description' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.description',
 	        'config' => [
 			    'type' => 'text',
@@ -313,10 +292,10 @@ return [
 			    'rows' => 15,
 			    'eval' => 'trim',
 			],
-	        'defaultExtras' => 'rte[]'
+	        'defaultExtras' => 'richtext:rte_transform[mode=ts_css]'
 	    ],
 	    'country' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.country',
 	        'config' => [
 			    'type' => 'select',
@@ -328,10 +307,35 @@ return [
 			    'maxitems' => 1,
 			    'eval' => ''
 			],
-	        
+	    ],
+	    'internalpage' => [
+		    'exclude' => 1,
+		    'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.internalpage',
+		    'config' => [
+			    'type' => 'input',
+			    'size' => 30,
+			    'eval' => 'trim',
+			    'wizards' => [
+				    '_PADDING' => 2,
+				    'link' => [
+					    'type' => 'popup',
+					    'title' => 'LLL:EXT:cms/locallang_ttc.xml:header_link_formlabel',
+					    'icon' => 'link_popup.gif',
+					    'module' => [
+						    'name' => 'wizard_element_browser',
+						    'urlParameters' => [
+							    'mode' => 'wizard',
+							    'act' => 'page'
+						    ]
+					    ],
+					    'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1',
+				    ],
+			    ],
+			    'softref' => 'typolink',
+		    ],
 	    ],
 	    'groups' => [
-	        'exclude' => 1,
+	        'exclude' => true,
 	        'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.groups',
 	        'config' => [
 			    'type' => 'select',
@@ -350,8 +354,8 @@ return [
 			                'name' => 'wizard_edit',
 			            ],
 			            'type' => 'popup',
-			            'title' => 'Edit',
-			            'icon' => 'edit2.gif',
+			            'title' => 'Edit', // todo define label: LLL:EXT:.../Resources/Private/Language/locallang_tca.xlf:wizard.edit
+			            'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_edit.gif',
 			            'popup_onlyOpenIfSelected' => 1,
 			            'JSopenParams' => 'height=350,width=580,status=0,menubar=0,scrollbars=1',
 			        ],
@@ -360,8 +364,8 @@ return [
 			                'name' => 'wizard_add',
 			            ],
 			            'type' => 'script',
-			            'title' => 'Create new',
-			            'icon' => 'add.gif',
+			            'title' => 'Create new', // todo define label: LLL:EXT:.../Resources/Private/Language/locallang_tca.xlf:wizard.add
+			            'icon' => 'EXT:backend/Resources/Public/Images/FormFieldWizard/wizard_add.gif',
 			            'params' => [
 			                'table' => 'tx_lvaddress_domain_model_group',
 			                'pid' => '###CURRENT_PID###',
@@ -370,8 +374,6 @@ return [
 			        ],
 			    ],
 			],
-	        
 	    ],
-        
     ],
 ];

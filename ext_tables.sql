@@ -23,6 +23,7 @@ CREATE TABLE tx_lvaddress_domain_model_address (
 	state varchar(255) DEFAULT '' NOT NULL,
 	description text NOT NULL,
 	country int(11) DEFAULT '0' NOT NULL,
+	internalpage int(11) DEFAULT '0' NOT NULL,
 	groups int(11) unsigned DEFAULT '0' NOT NULL,
 
 	tstamp int(11) unsigned DEFAULT '0' NOT NULL,
@@ -43,8 +44,6 @@ CREATE TABLE tx_lvaddress_domain_model_address (
 	t3ver_tstamp int(11) DEFAULT '0' NOT NULL,
 	t3ver_move_id int(11) DEFAULT '0' NOT NULL,
 
-  sorting int(11) unsigned DEFAULT '0' NOT NULL,
-
 	sys_language_uid int(11) DEFAULT '0' NOT NULL,
 	l10n_parent int(11) DEFAULT '0' NOT NULL,
 	l10n_diffsource mediumblob,
@@ -52,7 +51,7 @@ CREATE TABLE tx_lvaddress_domain_model_address (
 	PRIMARY KEY (uid),
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
- KEY language (l10n_parent,sys_language_uid)
+	KEY language (l10n_parent,sys_language_uid)
 
 );
 
@@ -93,7 +92,7 @@ CREATE TABLE tx_lvaddress_domain_model_map (
 	PRIMARY KEY (uid),
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
- KEY language (l10n_parent,sys_language_uid)
+	KEY language (l10n_parent,sys_language_uid)
 
 );
 
@@ -134,7 +133,7 @@ CREATE TABLE tx_lvaddress_domain_model_group (
 	PRIMARY KEY (uid),
 	KEY parent (pid),
 	KEY t3ver_oid (t3ver_oid,t3ver_wsid),
- KEY language (l10n_parent,sys_language_uid)
+	KEY language (l10n_parent,sys_language_uid)
 
 );
 

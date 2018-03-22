@@ -1,4 +1,4 @@
-
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:layout name="Default" />
 
 This Template is responsible for creating a table of domain objects.
@@ -36,6 +36,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 		<th><f:translate key="tx_lvaddress_domain_model_address.state" /></th>
 		<th><f:translate key="tx_lvaddress_domain_model_address.description" /></th>
 		<th><f:translate key="tx_lvaddress_domain_model_address.country" /></th>
+		<th><f:translate key="tx_lvaddress_domain_model_address.internalpage" /></th>
 		<th> </th>
 		<th> </th>
 	</tr>
@@ -59,6 +60,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 			<td><f:link.action action="show" arguments="{address : address}"> {address.state}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{address : address}"> {address.description}</f:link.action></td>
 			<td><f:link.action action="show" arguments="{address : address}"> {address.country}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{address : address}"> {address.internalpage}</f:link.action></td>
 			<td><f:link.action action="edit" arguments="{address : address}">Edit</f:link.action></td>
 			<td><f:link.action action="delete" arguments="{address : address}">Delete</f:link.action></td>
 		</tr>
@@ -67,3 +69,4 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <f:link.action action="new">New Address</f:link.action>
 </f:section>
+</html>

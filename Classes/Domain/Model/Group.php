@@ -26,33 +26,44 @@ namespace TYPO3\Lvaddress\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+/***
+ *
+ * This file is part of the "Adressen" Extension for TYPO3 CMS.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *
+ *  (c) 2018
+ *
+ ***/
+
 /**
  * Group
  */
 class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
-
     /**
      * name
      *
      * @var string
      */
     protected $name = '';
-    
+
     /**
      * image
      *
      * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     * @cascade remove
      */
     protected $image = null;
-    
+
     /**
      * description
      *
      * @var string
      */
     protected $description = '';
-    
+
     /**
      * Returns the name
      *
@@ -62,7 +73,7 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->name;
     }
-    
+
     /**
      * Sets the name
      *
@@ -73,7 +84,7 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->name = $name;
     }
-    
+
     /**
      * Returns the image
      *
@@ -83,7 +94,7 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->image;
     }
-    
+
     /**
      * Sets the image
      *
@@ -94,7 +105,7 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->image = $image;
     }
-    
+
     /**
      * Returns the description
      *
@@ -104,7 +115,7 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->description;
     }
-    
+
     /**
      * Sets the description
      *
@@ -115,5 +126,4 @@ class Group extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->description = $description;
     }
-
 }

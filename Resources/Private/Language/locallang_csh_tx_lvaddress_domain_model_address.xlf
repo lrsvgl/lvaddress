@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2016-08-03T12:38:00Z" product-name="lvaddress">
+	<file source-language="en" datatype="plaintext" original="messages" date="2018-03-21T11:50:15Z" product-name="lvaddress">
 		<header/>
 		<body>
+			<trans-unit id="tx_lvaddress_domain_model_addresslist">
+				<source>Addresslist</source>
+			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_addresslist.description">
+				<source></source>
+			</trans-unit>
 			<trans-unit id="lastname.description">
 				<source>lastname</source>
 			</trans-unit>
@@ -53,6 +59,9 @@
 			</trans-unit>
 			<trans-unit id="country.description">
 				<source>country</source>
+			</trans-unit>
+			<trans-unit id="internalpage.description">
+				<source>internalpage</source>
 			</trans-unit>
 			<trans-unit id="groups.description">
 				<source>groups</source>

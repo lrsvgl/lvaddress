@@ -54,6 +54,9 @@
 			<trans-unit id="tx_lvaddress_domain_model_address.description">
 				<target>Beschreibung</target>
 			</trans-unit>
+			<trans-unit id="tx_lvaddress_domain_model_address.internalpage">
+				<target>Bereich</target>
+			</trans-unit>
 			<trans-unit id="tx_lvaddress_domain_model_address.country">
 				<target>Länderauswahl</target>
 			</trans-unit>

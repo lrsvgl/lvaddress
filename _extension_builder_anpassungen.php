@@ -29,13 +29,39 @@ array(
         'label' => 'lastname',
         'label_alt' => 'firstname',
         'label_alt_force' => 1,
-        'sortby' => 'sorting',
+        //'sortby' => 'sorting',
         //'default_sortby' => ',lastname,firstname',
 
-    ]
+    ],
 
 
 
+	    'internalpage' => [
+		    'exclude' => 1,
+		    'label' => 'LLL:EXT:lvaddress/Resources/Private/Language/locallang_db.xlf:tx_lvaddress_domain_model_address.internalpage',
+		    'config' => [
+			    'type' => 'input',
+			    'size' => 30,
+			    'eval' => 'trim',
+			    'wizards' => [
+				    '_PADDING' => 2,
+				    'link' => [
+					    'type' => 'popup',
+					    'title' => 'LLL:EXT:cms/locallang_ttc.xml:header_link_formlabel',
+					    'icon' => 'link_popup.gif',
+					    'module' => [
+						    'name' => 'wizard_element_browser',
+						    'urlParameters' => [
+							    'mode' => 'wizard',
+							    'act' => 'page'
+						    ]
+					    ],
+					    'JSopenParams' => 'height=300,width=500,status=0,menubar=0,scrollbars=1',
+				    ],
+			    ],
+			    'softref' => 'typolink',
+		    ],
+	    ],
 );
 
 

@@ -2,27 +2,24 @@
 namespace TYPO3\Lvaddress\Tests\Unit\Domain\Model;
 
 /**
- * Test case for class \TYPO3\Lvaddress\Domain\Model\Address.
- *
- * @copyright Copyright belongs to the respective authors
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * Test case.
  */
 class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
     /**
      * @var \TYPO3\Lvaddress\Domain\Model\Address
      */
-    protected $subject = NULL;
+    protected $subject = null;
 
-    public function setUp()
+    protected function setUp()
     {
+        parent::setUp();
         $this->subject = new \TYPO3\Lvaddress\Domain\Model\Address();
     }
 
-    public function tearDown()
+    protected function tearDown()
     {
-        unset($this->subject);
+        parent::tearDown();
     }
 
     /**
@@ -30,7 +27,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getLastnameReturnsInitialValueForString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getLastname()
         );
@@ -44,7 +41,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $this->subject->setLastname('Conceived at T3CON10');
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             'Conceived at T3CON10',
             'lastname',
             $this->subject
@@ -57,7 +54,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getFirstnameReturnsInitialValueForString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getFirstname()
         );
@@ -71,7 +68,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $this->subject->setFirstname('Conceived at T3CON10');
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             'Conceived at T3CON10',
             'firstname',
             $this->subject
@@ -84,8 +81,8 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getImageReturnsInitialValueForFileReference()
     {
-        $this->assertEquals(
-            NULL,
+        self::assertEquals(
+            null,
             $this->subject->getImage()
         );
 
@@ -99,7 +96,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
         $fileReferenceFixture = new \TYPO3\CMS\Extbase\Domain\Model\FileReference();
         $this->subject->setImage($fileReferenceFixture);
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             $fileReferenceFixture,
             'image',
             $this->subject
@@ -112,7 +109,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getTitleReturnsInitialValueForString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getTitle()
         );
@@ -126,7 +123,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $this->subject->setTitle('Conceived at T3CON10');
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             'Conceived at T3CON10',
             'title',
             $this->subject
@@ -139,7 +136,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getFunctionReturnsInitialValueForString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getFunction()
         );
@@ -153,7 +150,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $this->subject->setFunction('Conceived at T3CON10');
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             'Conceived at T3CON10',
             'function',
             $this->subject
@@ -166,7 +163,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getPhoneReturnsInitialValueForString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getPhone()
         );
@@ -180,7 +177,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $this->subject->setPhone('Conceived at T3CON10');
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             'Conceived at T3CON10',
             'phone',
             $this->subject
@@ -193,7 +190,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getFaxReturnsInitialValueForString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getFax()
         );
@@ -207,7 +204,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $this->subject->setFax('Conceived at T3CON10');
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             'Conceived at T3CON10',
             'fax',
             $this->subject
@@ -220,7 +217,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getMobileReturnsInitialValueForString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getMobile()
         );
@@ -234,7 +231,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $this->subject->setMobile('Conceived at T3CON10');
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             'Conceived at T3CON10',
             'mobile',
             $this->subject
@@ -247,7 +244,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getEmailReturnsInitialValueForString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getEmail()
         );
@@ -261,7 +258,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $this->subject->setEmail('Conceived at T3CON10');
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             'Conceived at T3CON10',
             'email',
             $this->subject
@@ -274,7 +271,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getWwwReturnsInitialValueForString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getWww()
         );
@@ -288,7 +285,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $this->subject->setWww('Conceived at T3CON10');
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             'Conceived at T3CON10',
             'www',
             $this->subject
@@ -301,7 +298,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getCompanyReturnsInitialValueForString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getCompany()
         );
@@ -315,7 +312,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $this->subject->setCompany('Conceived at T3CON10');
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             'Conceived at T3CON10',
             'company',
             $this->subject
@@ -328,7 +325,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getStreetReturnsInitialValueForString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getStreet()
         );
@@ -342,7 +339,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $this->subject->setStreet('Conceived at T3CON10');
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             'Conceived at T3CON10',
             'street',
             $this->subject
@@ -355,7 +352,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getZipReturnsInitialValueForString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getZip()
         );
@@ -369,7 +366,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $this->subject->setZip('Conceived at T3CON10');
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             'Conceived at T3CON10',
             'zip',
             $this->subject
@@ -382,7 +379,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getCityReturnsInitialValueForString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getCity()
         );
@@ -396,7 +393,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $this->subject->setCity('Conceived at T3CON10');
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             'Conceived at T3CON10',
             'city',
             $this->subject
@@ -409,7 +406,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getStateReturnsInitialValueForString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getState()
         );
@@ -423,7 +420,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $this->subject->setState('Conceived at T3CON10');
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             'Conceived at T3CON10',
             'state',
             $this->subject
@@ -436,7 +433,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getDescriptionReturnsInitialValueForString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getDescription()
         );
@@ -450,7 +447,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $this->subject->setDescription('Conceived at T3CON10');
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             'Conceived at T3CON10',
             'description',
             $this->subject
@@ -475,10 +472,24 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     /**
      * @test
      */
+    public function getInternalpageReturnsInitialValueForInt()
+    {
+    }
+
+    /**
+     * @test
+     */
+    public function setInternalpageForIntSetsInternalpage()
+    {
+    }
+
+    /**
+     * @test
+     */
     public function getGroupsReturnsInitialValueForGroup()
     {
         $newObjectStorage = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
-        $this->assertEquals(
+        self::assertEquals(
             $newObjectStorage,
             $this->subject->getGroups()
         );
@@ -495,7 +506,7 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
         $objectStorageHoldingExactlyOneGroups->attach($group);
         $this->subject->setGroups($objectStorageHoldingExactlyOneGroups);
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             $objectStorageHoldingExactlyOneGroups,
             'groups',
             $this->subject
@@ -509,8 +520,12 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     public function addGroupToObjectStorageHoldingGroups()
     {
         $group = new \TYPO3\Lvaddress\Domain\Model\Group();
-        $groupsObjectStorageMock = $this->getMock(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class, ['attach'], [], '', false);
-        $groupsObjectStorageMock->expects($this->once())->method('attach')->with($this->equalTo($group));
+        $groupsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['attach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $groupsObjectStorageMock->expects(self::once())->method('attach')->with(self::equalTo($group));
         $this->inject($this->subject, 'groups', $groupsObjectStorageMock);
 
         $this->subject->addGroup($group);
@@ -522,8 +537,12 @@ class AddressTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     public function removeGroupFromObjectStorageHoldingGroups()
     {
         $group = new \TYPO3\Lvaddress\Domain\Model\Group();
-        $groupsObjectStorageMock = $this->getMock(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class, ['detach'], [], '', false);
-        $groupsObjectStorageMock->expects($this->once())->method('detach')->with($this->equalTo($group));
+        $groupsObjectStorageMock = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->setMethods(['detach'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $groupsObjectStorageMock->expects(self::once())->method('detach')->with(self::equalTo($group));
         $this->inject($this->subject, 'groups', $groupsObjectStorageMock);
 
         $this->subject->removeGroup($group);

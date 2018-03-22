@@ -26,12 +26,22 @@ namespace TYPO3\Lvaddress\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+/***
+ *
+ * This file is part of the "Adressen" Extension for TYPO3 CMS.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *
+ *  (c) 2018
+ *
+ ***/
+
 /**
  * GroupController
  */
 class GroupController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-
     /**
      * action list
      *
@@ -42,7 +52,7 @@ class GroupController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $groups = $this->groupRepository->findAll();
         $this->view->assign('groups', $groups);
     }
-    
+
     /**
      * action show
      *
@@ -53,7 +63,7 @@ class GroupController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     {
         $this->view->assign('group', $group);
     }
-    
+
     /**
      * action new
      *
@@ -61,9 +71,9 @@ class GroupController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
      */
     public function newAction()
     {
-        
+
     }
-    
+
     /**
      * action create
      *
@@ -76,7 +86,7 @@ class GroupController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->groupRepository->add($newGroup);
         $this->redirect('list');
     }
-    
+
     /**
      * action edit
      *
@@ -88,7 +98,7 @@ class GroupController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
     {
         $this->view->assign('group', $group);
     }
-    
+
     /**
      * action update
      *
@@ -101,7 +111,7 @@ class GroupController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->groupRepository->update($group);
         $this->redirect('list');
     }
-    
+
     /**
      * action delete
      *
@@ -114,5 +124,4 @@ class GroupController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
         $this->groupRepository->remove($group);
         $this->redirect('list');
     }
-
 }

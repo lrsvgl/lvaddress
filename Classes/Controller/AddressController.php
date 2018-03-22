@@ -26,12 +26,22 @@ namespace TYPO3\Lvaddress\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+/***
+ *
+ * This file is part of the "Adressen" Extension for TYPO3 CMS.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *
+ *  (c) 2018
+ *
+ ***/
+
 /**
  * AddressController
  */
 class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
-
     /**
      * addressRepository
      *
@@ -39,7 +49,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      * @inject
      */
     protected $addressRepository = NULL;
-    
+
     /**
      * action list
      *
@@ -50,7 +60,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         $addresses = $this->addressRepository->findAll();
         $this->view->assign('addresses', $addresses);
     }
-    
+
     /**
      * action show
      *
@@ -61,7 +71,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     {
         $this->view->assign('address', $address);
     }
-    
+
     /**
      * action new
      *
@@ -69,9 +79,9 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function newAction()
     {
-        
+
     }
-    
+
     /**
      * action create
      *
@@ -84,7 +94,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         $this->addressRepository->add($newAddress);
         $this->redirect('list');
     }
-    
+
     /**
      * action edit
      *
@@ -96,7 +106,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
     {
         $this->view->assign('address', $address);
     }
-    
+
     /**
      * action update
      *
@@ -109,7 +119,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         $this->addressRepository->update($address);
         $this->redirect('list');
     }
-    
+
     /**
      * action delete
      *
@@ -122,7 +132,7 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
         $this->addressRepository->remove($address);
         $this->redirect('list');
     }
-    
+
     /**
      * action singleView
      *
@@ -130,11 +140,9 @@ class AddressController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControll
      */
     public function singleViewAction()
     {
-    	//debug($this->settings);
-    	$addressUid = $this->settings['singleUid'];
-	    $address = $this->addressRepository->findByUid($addressUid);
-	    $this->view->assign('address', $address);
-        
+        //debug($this->settings);
+        $addressUid = $this->settings['singleUid'];
+        $address = $this->addressRepository->findByUid($addressUid);
+        $this->view->assign('address', $address);
     }
-
 }

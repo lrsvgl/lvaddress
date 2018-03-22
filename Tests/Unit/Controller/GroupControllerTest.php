@@ -2,25 +2,27 @@
 namespace TYPO3\Lvaddress\Tests\Unit\Controller;
 
 /**
- * Test case for class TYPO3\Lvaddress\Controller\GroupController.
- *
+ * Test case.
  */
 class GroupControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
-
     /**
      * @var \TYPO3\Lvaddress\Controller\GroupController
      */
-    protected $subject = NULL;
+    protected $subject = null;
 
-    public function setUp()
+    protected function setUp()
     {
-        $this->subject = $this->getMock(\TYPO3\Lvaddress\Controller\GroupController::class, ['redirect', 'forward', 'addFlashMessage'], [], '', false);
+        parent::setUp();
+        $this->subject = $this->getMockBuilder(\TYPO3\Lvaddress\Controller\GroupController::class)
+            ->setMethods(['redirect', 'forward', 'addFlashMessage'])
+            ->disableOriginalConstructor()
+            ->getMock();
     }
 
-    public function tearDown()
+    protected function tearDown()
     {
-        unset($this->subject);
+        parent::tearDown();
     }
 
     /**
@@ -29,14 +31,19 @@ class GroupControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     public function listActionFetchesAllGroupsFromRepositoryAndAssignsThemToView()
     {
 
-        $allGroups = $this->getMock(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class, [], [], '', false);
+        $allGroups = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->disableOriginalConstructor()
+            ->getMock();
 
-        $groupRepository = $this->getMock(\::class, ['findAll'], [], '', false);
-        $groupRepository->expects($this->once())->method('findAll')->will($this->returnValue($allGroups));
+        $groupRepository = $this->getMockBuilder(\::class)
+            ->setMethods(['findAll'])
+            ->disableOriginalConstructor()
+            ->getMock();
+        $groupRepository->expects(self::once())->method('findAll')->will(self::returnValue($allGroups));
         $this->inject($this->subject, 'groupRepository', $groupRepository);
 
-        $view = $this->getMock(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class);
-        $view->expects($this->once())->method('assign')->with('groups', $allGroups);
+        $view = $this->getMockBuilder(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class)->getMock();
+        $view->expects(self::once())->method('assign')->with('groups', $allGroups);
         $this->inject($this->subject, 'view', $view);
 
         $this->subject->listAction();
@@ -49,9 +56,9 @@ class GroupControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $group = new \TYPO3\Lvaddress\Domain\Model\Group();
 
-        $view = $this->getMock(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class);
+        $view = $this->getMockBuilder(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class)->getMock();
         $this->inject($this->subject, 'view', $view);
-        $view->expects($this->once())->method('assign')->with('group', $group);
+        $view->expects(self::once())->method('assign')->with('group', $group);
 
         $this->subject->showAction($group);
     }
@@ -63,8 +70,12 @@ class GroupControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $group = new \TYPO3\Lvaddress\Domain\Model\Group();
 
-        $groupRepository = $this->getMock(\::class, ['add'], [], '', false);
-        $groupRepository->expects($this->once())->method('add')->with($group);
+        $groupRepository = $this->getMockBuilder(\::class)
+            ->setMethods(['add'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $groupRepository->expects(self::once())->method('add')->with($group);
         $this->inject($this->subject, 'groupRepository', $groupRepository);
 
         $this->subject->createAction($group);
@@ -77,9 +88,9 @@ class GroupControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $group = new \TYPO3\Lvaddress\Domain\Model\Group();
 
-        $view = $this->getMock(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class);
+        $view = $this->getMockBuilder(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class)->getMock();
         $this->inject($this->subject, 'view', $view);
-        $view->expects($this->once())->method('assign')->with('group', $group);
+        $view->expects(self::once())->method('assign')->with('group', $group);
 
         $this->subject->editAction($group);
     }
@@ -91,8 +102,12 @@ class GroupControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $group = new \TYPO3\Lvaddress\Domain\Model\Group();
 
-        $groupRepository = $this->getMock(\::class, ['update'], [], '', false);
-        $groupRepository->expects($this->once())->method('update')->with($group);
+        $groupRepository = $this->getMockBuilder(\::class)
+            ->setMethods(['update'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $groupRepository->expects(self::once())->method('update')->with($group);
         $this->inject($this->subject, 'groupRepository', $groupRepository);
 
         $this->subject->updateAction($group);
@@ -105,8 +120,12 @@ class GroupControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $group = new \TYPO3\Lvaddress\Domain\Model\Group();
 
-        $groupRepository = $this->getMock(\::class, ['remove'], [], '', false);
-        $groupRepository->expects($this->once())->method('remove')->with($group);
+        $groupRepository = $this->getMockBuilder(\::class)
+            ->setMethods(['remove'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $groupRepository->expects(self::once())->method('remove')->with($group);
         $this->inject($this->subject, 'groupRepository', $groupRepository);
 
         $this->subject->deleteAction($group);

@@ -2,25 +2,27 @@
 namespace TYPO3\Lvaddress\Tests\Unit\Controller;
 
 /**
- * Test case for class TYPO3\Lvaddress\Controller\MapController.
- *
+ * Test case.
  */
 class MapControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
-
     /**
      * @var \TYPO3\Lvaddress\Controller\MapController
      */
-    protected $subject = NULL;
+    protected $subject = null;
 
-    public function setUp()
+    protected function setUp()
     {
-        $this->subject = $this->getMock(\TYPO3\Lvaddress\Controller\MapController::class, ['redirect', 'forward', 'addFlashMessage'], [], '', false);
+        parent::setUp();
+        $this->subject = $this->getMockBuilder(\TYPO3\Lvaddress\Controller\MapController::class)
+            ->setMethods(['redirect', 'forward', 'addFlashMessage'])
+            ->disableOriginalConstructor()
+            ->getMock();
     }
 
-    public function tearDown()
+    protected function tearDown()
     {
-        unset($this->subject);
+        parent::tearDown();
     }
 
     /**
@@ -29,14 +31,19 @@ class MapControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     public function listActionFetchesAllMapsFromRepositoryAndAssignsThemToView()
     {
 
-        $allMaps = $this->getMock(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class, [], [], '', false);
+        $allMaps = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->disableOriginalConstructor()
+            ->getMock();
 
-        $mapRepository = $this->getMock(\::class, ['findAll'], [], '', false);
-        $mapRepository->expects($this->once())->method('findAll')->will($this->returnValue($allMaps));
+        $mapRepository = $this->getMockBuilder(\::class)
+            ->setMethods(['findAll'])
+            ->disableOriginalConstructor()
+            ->getMock();
+        $mapRepository->expects(self::once())->method('findAll')->will(self::returnValue($allMaps));
         $this->inject($this->subject, 'mapRepository', $mapRepository);
 
-        $view = $this->getMock(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class);
-        $view->expects($this->once())->method('assign')->with('maps', $allMaps);
+        $view = $this->getMockBuilder(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class)->getMock();
+        $view->expects(self::once())->method('assign')->with('maps', $allMaps);
         $this->inject($this->subject, 'view', $view);
 
         $this->subject->listAction();
@@ -49,9 +56,9 @@ class MapControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $map = new \TYPO3\Lvaddress\Domain\Model\Map();
 
-        $view = $this->getMock(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class);
+        $view = $this->getMockBuilder(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class)->getMock();
         $this->inject($this->subject, 'view', $view);
-        $view->expects($this->once())->method('assign')->with('map', $map);
+        $view->expects(self::once())->method('assign')->with('map', $map);
 
         $this->subject->showAction($map);
     }
@@ -63,8 +70,12 @@ class MapControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $map = new \TYPO3\Lvaddress\Domain\Model\Map();
 
-        $mapRepository = $this->getMock(\::class, ['add'], [], '', false);
-        $mapRepository->expects($this->once())->method('add')->with($map);
+        $mapRepository = $this->getMockBuilder(\::class)
+            ->setMethods(['add'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $mapRepository->expects(self::once())->method('add')->with($map);
         $this->inject($this->subject, 'mapRepository', $mapRepository);
 
         $this->subject->createAction($map);
@@ -77,9 +88,9 @@ class MapControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $map = new \TYPO3\Lvaddress\Domain\Model\Map();
 
-        $view = $this->getMock(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class);
+        $view = $this->getMockBuilder(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class)->getMock();
         $this->inject($this->subject, 'view', $view);
-        $view->expects($this->once())->method('assign')->with('map', $map);
+        $view->expects(self::once())->method('assign')->with('map', $map);
 
         $this->subject->editAction($map);
     }
@@ -91,8 +102,12 @@ class MapControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $map = new \TYPO3\Lvaddress\Domain\Model\Map();
 
-        $mapRepository = $this->getMock(\::class, ['update'], [], '', false);
-        $mapRepository->expects($this->once())->method('update')->with($map);
+        $mapRepository = $this->getMockBuilder(\::class)
+            ->setMethods(['update'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $mapRepository->expects(self::once())->method('update')->with($map);
         $this->inject($this->subject, 'mapRepository', $mapRepository);
 
         $this->subject->updateAction($map);
@@ -105,8 +120,12 @@ class MapControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $map = new \TYPO3\Lvaddress\Domain\Model\Map();
 
-        $mapRepository = $this->getMock(\::class, ['remove'], [], '', false);
-        $mapRepository->expects($this->once())->method('remove')->with($map);
+        $mapRepository = $this->getMockBuilder(\::class)
+            ->setMethods(['remove'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $mapRepository->expects(self::once())->method('remove')->with($map);
         $this->inject($this->subject, 'mapRepository', $mapRepository);
 
         $this->subject->deleteAction($map);

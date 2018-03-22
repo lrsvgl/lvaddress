@@ -6,9 +6,9 @@ call_user_func(
     {
 
         \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-            'TYPO3.' . $extKey,
+            'TYPO3.Lvaddress',
             'Addresslist',
-            'Ansprechpartner'
+            'Addresslist'
         );
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($extKey, 'Configuration/TypoScript', 'Adressen');
@@ -25,6 +25,7 @@ call_user_func(
     },
     $_EXTKEY
 );
+
 $pluginSignature = str_replace('_', '', $_EXTKEY) . '_addresslist';
 $TCA['tt_content']['types']['list']['subtypes_addlist'][$pluginSignature] = 'pi_flexform';
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Configuration/FlexForms/flexform_address.xml');

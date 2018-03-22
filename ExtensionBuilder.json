@@ -204,6 +204,16 @@
                             "propertyName": "country",
                             "propertyType": "Select",
                             "uid": "515772050649"
+                        },
+                        {
+                            "allowedFileTypes": "",
+                            "maxItems": "1",
+                            "propertyDescription": "",
+                            "propertyIsExcludeField": true,
+                            "propertyIsRequired": false,
+                            "propertyName": "internalpage",
+                            "propertyType": "Integer",
+                            "uid": "842547406046"
                         }
                     ]
                 },
@@ -217,6 +227,7 @@
                             "relationName": "groups",
                             "relationType": "manyToMany",
                             "relationWire": "[wired]",
+                            "renderType": "selectMultipleSideBySide",
                             "uid": "959267577962"
                         }
                     ]
@@ -238,9 +249,7 @@
                     "_default2_new_create": true,
                     "_default3_edit_update": true,
                     "_default4_delete": true,
-                    "customActions": [
-
-                    ]
+                    "customActions": []
                 },
                 "name": "Map",
                 "objectsettings": {
@@ -291,9 +300,7 @@
                     ]
                 },
                 "relationGroup": {
-                    "relations": [
-
-                    ]
+                    "relations": []
                 }
             }
         },
@@ -312,9 +319,7 @@
                     "_default2_new_create": true,
                     "_default3_edit_update": true,
                     "_default4_delete": true,
-                    "customActions": [
-
-                    ]
+                    "customActions": []
                 },
                 "name": "Group",
                 "objectsettings": {
@@ -365,17 +370,13 @@
                     ]
                 },
                 "relationGroup": {
-                    "relations": [
-
-                    ]
+                    "relations": []
                 }
             }
         }
     ],
     "properties": {
-        "backendModules": [
-
-        ],
+        "backendModules": [],
         "description": "",
         "emConf": {
             "category": "plugin",
@@ -393,9 +394,7 @@
         "name": "Adressen",
         "originalExtensionKey": "lvaddress",
         "originalVendorName": "TYPO3",
-        "persons": [
-
-        ],
+        "persons": [],
         "plugins": [
             {
                 "actions": {
@@ -424,8 +423,8 @@
         }
     ],
     "log": {
-        "last_modified": "2016-08-03 12:38",
-        "extension_builder_version": "7.6.0",
-        "be_user": "Lars Vogel (2)"
+        "last_modified": "2018-03-21 11:50",
+        "extension_builder_version": "7.6.18",
+        "be_user": "Lars Vogel (22)"
     }
 }

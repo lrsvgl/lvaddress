@@ -26,138 +26,156 @@ namespace TYPO3\Lvaddress\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
+/***
+ *
+ * This file is part of the "Adressen" Extension for TYPO3 CMS.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *
+ *  (c) 2018
+ *
+ ***/
+
 /**
  * Address
  */
 class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
-
     /**
      * lastname
      *
      * @var string
      */
     protected $lastname = '';
-    
+
     /**
      * firstname
      *
      * @var string
      */
     protected $firstname = '';
-    
+
     /**
      * image
      *
      * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     * @cascade remove
      */
     protected $image = null;
-    
+
     /**
      * title
      *
      * @var string
      */
     protected $title = '';
-    
+
     /**
      * function
      *
      * @var string
      */
     protected $function = '';
-    
+
     /**
      * phone
      *
      * @var string
      */
     protected $phone = '';
-    
+
     /**
      * fax
      *
      * @var string
      */
     protected $fax = '';
-    
+
     /**
      * mobile
      *
      * @var string
      */
     protected $mobile = '';
-    
+
     /**
      * email
      *
      * @var string
      */
     protected $email = '';
-    
+
     /**
      * www
      *
      * @var string
      */
     protected $www = '';
-    
+
     /**
      * company
      *
      * @var string
      */
     protected $company = '';
-    
+
     /**
      * street
      *
      * @var string
      */
     protected $street = '';
-    
+
     /**
      * zip
      *
      * @var string
      */
     protected $zip = '';
-    
+
     /**
      * city
      *
      * @var string
      */
     protected $city = '';
-    
+
     /**
      * state
      *
      * @var string
      */
     protected $state = '';
-    
+
     /**
      * description
      *
      * @var string
      */
     protected $description = '';
-    
+
     /**
      * country
      *
      * @var int
      */
     protected $country = 0;
-    
+
+    /**
+     * internalpage
+     *
+     * @var int
+     */
+    protected $internalpage = 0;
+
     /**
      * groups
      *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\Lvaddress\Domain\Model\Group>
      */
     protected $groups = null;
-    
+
     /**
      * __construct
      */
@@ -166,7 +184,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         //Do not remove the next line: It would break the functionality
         $this->initStorageObjects();
     }
-    
+
     /**
      * Initializes all ObjectStorage properties
      * Do not modify this method!
@@ -179,7 +197,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->groups = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
-    
+
     /**
      * Returns the lastname
      *
@@ -189,7 +207,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->lastname;
     }
-    
+
     /**
      * Sets the lastname
      *
@@ -200,7 +218,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->lastname = $lastname;
     }
-    
+
     /**
      * Returns the firstname
      *
@@ -210,7 +228,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->firstname;
     }
-    
+
     /**
      * Sets the firstname
      *
@@ -221,7 +239,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->firstname = $firstname;
     }
-    
+
     /**
      * Returns the image
      *
@@ -231,7 +249,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->image;
     }
-    
+
     /**
      * Sets the image
      *
@@ -242,7 +260,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->image = $image;
     }
-    
+
     /**
      * Returns the title
      *
@@ -252,7 +270,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->title;
     }
-    
+
     /**
      * Sets the title
      *
@@ -263,7 +281,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->title = $title;
     }
-    
+
     /**
      * Returns the function
      *
@@ -273,7 +291,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->function;
     }
-    
+
     /**
      * Sets the function
      *
@@ -284,7 +302,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->function = $function;
     }
-    
+
     /**
      * Returns the phone
      *
@@ -294,7 +312,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->phone;
     }
-    
+
     /**
      * Sets the phone
      *
@@ -305,7 +323,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->phone = $phone;
     }
-    
+
     /**
      * Returns the fax
      *
@@ -315,7 +333,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->fax;
     }
-    
+
     /**
      * Sets the fax
      *
@@ -326,7 +344,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->fax = $fax;
     }
-    
+
     /**
      * Returns the mobile
      *
@@ -336,7 +354,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->mobile;
     }
-    
+
     /**
      * Sets the mobile
      *
@@ -347,7 +365,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->mobile = $mobile;
     }
-    
+
     /**
      * Returns the email
      *
@@ -357,7 +375,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->email;
     }
-    
+
     /**
      * Sets the email
      *
@@ -368,7 +386,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->email = $email;
     }
-    
+
     /**
      * Returns the www
      *
@@ -378,7 +396,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->www;
     }
-    
+
     /**
      * Sets the www
      *
@@ -389,7 +407,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->www = $www;
     }
-    
+
     /**
      * Returns the company
      *
@@ -399,7 +417,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->company;
     }
-    
+
     /**
      * Sets the company
      *
@@ -410,7 +428,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->company = $company;
     }
-    
+
     /**
      * Returns the street
      *
@@ -420,7 +438,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->street;
     }
-    
+
     /**
      * Sets the street
      *
@@ -431,7 +449,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->street = $street;
     }
-    
+
     /**
      * Returns the zip
      *
@@ -441,7 +459,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->zip;
     }
-    
+
     /**
      * Sets the zip
      *
@@ -452,7 +470,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->zip = $zip;
     }
-    
+
     /**
      * Returns the city
      *
@@ -462,7 +480,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->city;
     }
-    
+
     /**
      * Sets the city
      *
@@ -473,7 +491,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->city = $city;
     }
-    
+
     /**
      * Returns the state
      *
@@ -483,7 +501,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->state;
     }
-    
+
     /**
      * Sets the state
      *
@@ -494,7 +512,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->state = $state;
     }
-    
+
     /**
      * Returns the description
      *
@@ -504,7 +522,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->description;
     }
-    
+
     /**
      * Sets the description
      *
@@ -515,7 +533,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->description = $description;
     }
-    
+
     /**
      * Returns the country
      *
@@ -525,7 +543,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->country;
     }
-    
+
     /**
      * Sets the country
      *
@@ -536,7 +554,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->country = $country;
     }
-    
+
     /**
      * Adds a Group
      *
@@ -547,7 +565,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->groups->attach($group);
     }
-    
+
     /**
      * Removes a Group
      *
@@ -558,7 +576,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         $this->groups->detach($groupToRemove);
     }
-    
+
     /**
      * Returns the groups
      *
@@ -568,7 +586,7 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     {
         return $this->groups;
     }
-    
+
     /**
      * Sets the groups
      *
@@ -580,4 +598,24 @@ class Address extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
         $this->groups = $groups;
     }
 
+    /**
+     * Returns the internalpage
+     *
+     * @return int internalpage
+     */
+    public function getInternalpage()
+    {
+        return $this->internalpage;
+    }
+
+    /**
+     * Sets the internalpage
+     *
+     * @param int $internalpage
+     * @return void
+     */
+    public function setInternalpage($internalpage)
+    {
+        $this->internalpage = $internalpage;
+    }
 }

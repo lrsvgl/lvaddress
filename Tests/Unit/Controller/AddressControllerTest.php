@@ -2,25 +2,27 @@
 namespace TYPO3\Lvaddress\Tests\Unit\Controller;
 
 /**
- * Test case for class TYPO3\Lvaddress\Controller\AddressController.
- *
+ * Test case.
  */
 class AddressControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
-
     /**
      * @var \TYPO3\Lvaddress\Controller\AddressController
      */
-    protected $subject = NULL;
+    protected $subject = null;
 
-    public function setUp()
+    protected function setUp()
     {
-        $this->subject = $this->getMock(\TYPO3\Lvaddress\Controller\AddressController::class, ['redirect', 'forward', 'addFlashMessage'], [], '', false);
+        parent::setUp();
+        $this->subject = $this->getMockBuilder(\TYPO3\Lvaddress\Controller\AddressController::class)
+            ->setMethods(['redirect', 'forward', 'addFlashMessage'])
+            ->disableOriginalConstructor()
+            ->getMock();
     }
 
-    public function tearDown()
+    protected function tearDown()
     {
-        unset($this->subject);
+        parent::tearDown();
     }
 
     /**
@@ -29,14 +31,19 @@ class AddressControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     public function listActionFetchesAllAddressesFromRepositoryAndAssignsThemToView()
     {
 
-        $allAddresses = $this->getMock(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class, [], [], '', false);
+        $allAddresses = $this->getMockBuilder(\TYPO3\CMS\Extbase\Persistence\ObjectStorage::class)
+            ->disableOriginalConstructor()
+            ->getMock();
 
-        $addressRepository = $this->getMock(\TYPO3\Lvaddress\Domain\Repository\AddressRepository::class, ['findAll'], [], '', false);
-        $addressRepository->expects($this->once())->method('findAll')->will($this->returnValue($allAddresses));
+        $addressRepository = $this->getMockBuilder(\TYPO3\Lvaddress\Domain\Repository\AddressRepository::class)
+            ->setMethods(['findAll'])
+            ->disableOriginalConstructor()
+            ->getMock();
+        $addressRepository->expects(self::once())->method('findAll')->will(self::returnValue($allAddresses));
         $this->inject($this->subject, 'addressRepository', $addressRepository);
 
-        $view = $this->getMock(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class);
-        $view->expects($this->once())->method('assign')->with('addresses', $allAddresses);
+        $view = $this->getMockBuilder(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class)->getMock();
+        $view->expects(self::once())->method('assign')->with('addresses', $allAddresses);
         $this->inject($this->subject, 'view', $view);
 
         $this->subject->listAction();
@@ -49,9 +56,9 @@ class AddressControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $address = new \TYPO3\Lvaddress\Domain\Model\Address();
 
-        $view = $this->getMock(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class);
+        $view = $this->getMockBuilder(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class)->getMock();
         $this->inject($this->subject, 'view', $view);
-        $view->expects($this->once())->method('assign')->with('address', $address);
+        $view->expects(self::once())->method('assign')->with('address', $address);
 
         $this->subject->showAction($address);
     }
@@ -63,8 +70,12 @@ class AddressControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $address = new \TYPO3\Lvaddress\Domain\Model\Address();
 
-        $addressRepository = $this->getMock(\TYPO3\Lvaddress\Domain\Repository\AddressRepository::class, ['add'], [], '', false);
-        $addressRepository->expects($this->once())->method('add')->with($address);
+        $addressRepository = $this->getMockBuilder(\TYPO3\Lvaddress\Domain\Repository\AddressRepository::class)
+            ->setMethods(['add'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $addressRepository->expects(self::once())->method('add')->with($address);
         $this->inject($this->subject, 'addressRepository', $addressRepository);
 
         $this->subject->createAction($address);
@@ -77,9 +88,9 @@ class AddressControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $address = new \TYPO3\Lvaddress\Domain\Model\Address();
 
-        $view = $this->getMock(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class);
+        $view = $this->getMockBuilder(\TYPO3\CMS\Extbase\Mvc\View\ViewInterface::class)->getMock();
         $this->inject($this->subject, 'view', $view);
-        $view->expects($this->once())->method('assign')->with('address', $address);
+        $view->expects(self::once())->method('assign')->with('address', $address);
 
         $this->subject->editAction($address);
     }
@@ -91,8 +102,12 @@ class AddressControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $address = new \TYPO3\Lvaddress\Domain\Model\Address();
 
-        $addressRepository = $this->getMock(\TYPO3\Lvaddress\Domain\Repository\AddressRepository::class, ['update'], [], '', false);
-        $addressRepository->expects($this->once())->method('update')->with($address);
+        $addressRepository = $this->getMockBuilder(\TYPO3\Lvaddress\Domain\Repository\AddressRepository::class)
+            ->setMethods(['update'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $addressRepository->expects(self::once())->method('update')->with($address);
         $this->inject($this->subject, 'addressRepository', $addressRepository);
 
         $this->subject->updateAction($address);
@@ -105,8 +120,12 @@ class AddressControllerTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $address = new \TYPO3\Lvaddress\Domain\Model\Address();
 
-        $addressRepository = $this->getMock(\TYPO3\Lvaddress\Domain\Repository\AddressRepository::class, ['remove'], [], '', false);
-        $addressRepository->expects($this->once())->method('remove')->with($address);
+        $addressRepository = $this->getMockBuilder(\TYPO3\Lvaddress\Domain\Repository\AddressRepository::class)
+            ->setMethods(['remove'])
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $addressRepository->expects(self::once())->method('remove')->with($address);
         $this->inject($this->subject, 'addressRepository', $addressRepository);
 
         $this->subject->deleteAction($address);

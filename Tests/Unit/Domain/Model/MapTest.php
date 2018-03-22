@@ -2,27 +2,24 @@
 namespace TYPO3\Lvaddress\Tests\Unit\Domain\Model;
 
 /**
- * Test case for class \TYPO3\Lvaddress\Domain\Model\Map.
- *
- * @copyright Copyright belongs to the respective authors
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * Test case.
  */
 class MapTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
 {
     /**
      * @var \TYPO3\Lvaddress\Domain\Model\Map
      */
-    protected $subject = NULL;
+    protected $subject = null;
 
-    public function setUp()
+    protected function setUp()
     {
+        parent::setUp();
         $this->subject = new \TYPO3\Lvaddress\Domain\Model\Map();
     }
 
-    public function tearDown()
+    protected function tearDown()
     {
-        unset($this->subject);
+        parent::tearDown();
     }
 
     /**
@@ -44,8 +41,8 @@ class MapTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getMapReturnsInitialValueForFileReference()
     {
-        $this->assertEquals(
-            NULL,
+        self::assertEquals(
+            null,
             $this->subject->getMap()
         );
 
@@ -59,7 +56,7 @@ class MapTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
         $fileReferenceFixture = new \TYPO3\CMS\Extbase\Domain\Model\FileReference();
         $this->subject->setMap($fileReferenceFixture);
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             $fileReferenceFixture,
             'map',
             $this->subject
@@ -72,7 +69,7 @@ class MapTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
      */
     public function getHtmlReturnsInitialValueForString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getHtml()
         );
@@ -86,7 +83,7 @@ class MapTest extends \TYPO3\CMS\Core\Tests\UnitTestCase
     {
         $this->subject->setHtml('Conceived at T3CON10');
 
-        $this->assertAttributeEquals(
+        self::assertAttributeEquals(
             'Conceived at T3CON10',
             'html',
             $this->subject
